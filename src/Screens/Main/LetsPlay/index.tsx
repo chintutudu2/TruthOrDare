@@ -5,6 +5,7 @@ import {Image} from 'react-native';
 import Constants from '@constants/index';
 import {ButtonIcon, ButtonText} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
+import {onPressLetsPlay} from '@screens/Main/LetsPlay/helper';
 
 const LetsPlay = memo(function LetsPlay(props) {
   return (
@@ -22,6 +23,7 @@ const LetsPlay = memo(function LetsPlay(props) {
         <ButtonText
           isValid
           Icon={<Image source={Constants.Images.LetsPlayText} />}
+          onPress={onPressLetsPlay}
         />
       </RowView>
       <RowView style={styles.buttonContainer}>
