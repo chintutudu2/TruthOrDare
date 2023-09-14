@@ -11,4 +11,10 @@ export const styles = StyleSheet.create({
   spinner: {
     marginTop: dimension.margin30,
   },
+  buttonContainer: {
+    marginTop: dimension.margin12,
+  },
+  iconButton: {
+    marginRight: dimension.margin16,
+  },
 });

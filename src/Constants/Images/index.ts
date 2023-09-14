@@ -5,6 +5,10 @@ import ButtonTextBg from '@assets/Images/ButtonTextBg.png';
 import LetsPlayText from '@assets/Images/LetsPlayText.png';
 import SettingText from '@assets/Images/SettingText.png';
 import RateUsText from '@assets/Images/RateUsText.png';
+import ButtonIconBg from '@assets/Images/ButtonIconBg.png';
+import PlayIcon from '@assets/Images/PlayIcon.png';
+import SettingIcon from '@assets/Images/SettingIcon.png';
+import StarIcon from '@assets/Images/StarIcon.png';
 
 export const Images = {
   AppBackground_1,
@@ -14,4 +18,8 @@ export const Images = {
   LetsPlayText,
   SettingText,
   RateUsText,
+  ButtonIconBg,
+  PlayIcon,
+  SettingIcon,
+  StarIcon,
 };

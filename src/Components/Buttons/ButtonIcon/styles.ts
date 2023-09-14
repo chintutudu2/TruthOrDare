@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
   backgroundStyle: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: dimension.buttonHeight,
-    width: dimension.buttonWidth,
+    height: dimension.buttonCircleHeight,
+    width: dimension.buttonCircleWidth,
   },
 });
