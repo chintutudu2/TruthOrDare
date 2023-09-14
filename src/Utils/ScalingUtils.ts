@@ -33,6 +33,9 @@ export const dimension = {
 
   appMargin: getScaleSizeWidth(18),
 
+  buttonHeight: getScaleSizeWidth(73),
+  buttonWidth: getScaleSizeWidth(211),
+
   margin1: getScaleSizeWidth(1),
   margin2: getScaleSizeWidth(2),
   margin3: getScaleSizeWidth(3),
@@ -43,6 +46,7 @@ export const dimension = {
   margin8: getScaleSizeWidth(8),
   margin9: getScaleSizeWidth(9),
   margin10: getScaleSizeWidth(10),
+  margin12: getScaleSizeWidth(12),
   margin30: getScaleSizeWidth(30),
 };
 
