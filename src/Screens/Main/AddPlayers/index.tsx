@@ -31,12 +31,10 @@ const AddPlayers = memo(function AddPlayers(props) {
       </View>
       <RowView style={styles.footerContainer}>
         <ButtonIcon
-          style={styles.iconButton}
           isValid
           Icon={<Image source={Constants.Images.BackIcon} />}
         />
         <ButtonIcon
-          style={styles.iconButton}
           isValid
           Icon={<Image source={Constants.Images.PlayIcon} />}
         />
