@@ -51,7 +51,6 @@ const Age = memo(function Age(props) {
       </RowView>
       <RowView style={styles.backButton}>
         <ButtonIcon
-          style={styles.iconButton}
           isValid
           Icon={<Image source={Constants.Images.BackIcon} />}
         />
