@@ -4,6 +4,10 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
+    justifyContent: 'space-between',
+  },
+  viewContainer: {
+    alignItems: 'center',
   },
   logo: {
     marginTop: dimension.margin30,
@@ -17,5 +21,10 @@ export const styles = StyleSheet.create({
   },
   iconButton: {
     marginLeft: dimension.margin7,
+  },
+  footerContainer: {
+    width: dimension.appViewWidth,
+    justifyContent: 'space-between',
+    paddingHorizontal: dimension.margin10,
   },
 });
