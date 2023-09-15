@@ -50,7 +50,9 @@ export const dimension = {
   margin9: getScaleSizeWidth(9),
   margin10: getScaleSizeWidth(10),
   margin12: getScaleSizeWidth(12),
+  margin14: getScaleSizeWidth(14),
   margin16: getScaleSizeWidth(16),
+  margin20: getScaleSizeWidth(20),
   margin30: getScaleSizeWidth(30),
 };
 

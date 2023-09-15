@@ -6,10 +6,16 @@ import {ImageBackground, ScrollView, View} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 
 const AppLayout: FC<AppLayoutProps> = (props: AppLayoutProps) => {
-  const {children, contentContainerStyle, hasScrollView, disableScroll} = props;
+  const {
+    background = Constants.Images.AppBackground_1,
+    children,
+    contentContainerStyle,
+    hasScrollView,
+    disableScroll,
+  } = props;
   return (
     <ImageBackground
-      source={Constants.Images.AppBackground_1}
+      source={background}
       resizeMode="cover"
       style={styles.container}>
       <SafeAreaView

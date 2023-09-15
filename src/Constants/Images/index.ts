@@ -9,6 +9,15 @@ import ButtonIconBg from '@assets/Images/ButtonIconBg.png';
 import PlayIcon from '@assets/Images/PlayIcon.png';
 import SettingIcon from '@assets/Images/SettingIcon.png';
 import StarIcon from '@assets/Images/StarIcon.png';
+import AppBackground_2 from '@assets/Images/AppBackground_2.png';
+import SpinnerLogo_1 from '@assets/Images/SpinnerLogo_1.png';
+import KidsText from '@assets/Images/KidsText.png';
+import TeensText from '@assets/Images/TeensText.png';
+import AdultsText from '@assets/Images/AdultsText.png';
+import KidsIcon from '@assets/Images/KidsIcon.png';
+import TeensIcon from '@assets/Images/TeensIcon.png';
+import AdultsIcon from '@assets/Images/AdultsIcon.png';
+import BackIcon from '@assets/Images/BackIcon.png';
 
 export const Images = {
   AppBackground_1,
@@ -22,4 +31,13 @@ export const Images = {
   PlayIcon,
   SettingIcon,
   StarIcon,
+  AppBackground_2,
+  SpinnerLogo_1,
+  KidsText,
+  TeensText,
+  AdultsText,
+  KidsIcon,
+  TeensIcon,
+  AdultsIcon,
+  BackIcon,
 };

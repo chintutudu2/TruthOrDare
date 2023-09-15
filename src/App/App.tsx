@@ -5,7 +5,7 @@ import {SafeAreaProvider} from 'react-native-safe-area-context';
 const App = () => {
   return (
     <SafeAreaProvider>
-      <Screens.MainScreens.LetsPlay />
+      <Screens.MainScreens.Age />
     </SafeAreaProvider>
   );
 };
