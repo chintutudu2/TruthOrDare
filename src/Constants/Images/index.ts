@@ -23,6 +23,10 @@ import AddPlayersText from '@assets/Images/AddPlayersText.png';
 import ButtonTextBgBlue from '@assets/Images/ButtonTextBgBlue.png';
 import ButtonIconBgRed from '@assets/Images/ButtonIconBgRed.png';
 import DeleteIcon from '@assets/Images/DeleteIcon.png';
+import SoundIcon from '@assets/Images/SoundIcon.png';
+import RankIcon from '@assets/Images/RankIcon.png';
+import BottleIcon from '@assets/Images/BottleIcon.png';
+import Spinner from '@assets/Images/Spinner.png';
 
 export const Images = {
   AppBackground_1,
@@ -50,4 +54,8 @@ export const Images = {
   ButtonTextBgBlue,
   ButtonIconBgRed,
   DeleteIcon,
+  SoundIcon,
+  RankIcon,
+  BottleIcon,
+  Spinner,
 };
