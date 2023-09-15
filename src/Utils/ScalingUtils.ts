@@ -36,6 +36,9 @@ export const dimension = {
   buttonHeight: getScaleSizeWidth(73),
   buttonWidth: getScaleSizeWidth(211),
 
+  buttonLongHeight: getScaleSizeWidth(68),
+  buttonLongWidth: getScaleSizeWidth(301),
+
   buttonCircleHeight: getScaleSizeWidth(68),
   buttonCircleWidth: getScaleSizeWidth(68),
 

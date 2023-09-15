@@ -18,6 +18,11 @@ import KidsIcon from '@assets/Images/KidsIcon.png';
 import TeensIcon from '@assets/Images/TeensIcon.png';
 import AdultsIcon from '@assets/Images/AdultsIcon.png';
 import BackIcon from '@assets/Images/BackIcon.png';
+import AppBackground_3 from '@assets/Images/AppBackground_3.png';
+import AddPlayersText from '@assets/Images/AddPlayersText.png';
+import ButtonTextBgBlue from '@assets/Images/ButtonTextBgBlue.png';
+import ButtonIconBgRed from '@assets/Images/ButtonIconBgRed.png';
+import DeleteIcon from '@assets/Images/DeleteIcon.png';
 
 export const Images = {
   AppBackground_1,
@@ -40,4 +45,9 @@ export const Images = {
   TeensIcon,
   AdultsIcon,
   BackIcon,
+  AppBackground_3,
+  AddPlayersText,
+  ButtonTextBgBlue,
+  ButtonIconBgRed,
+  DeleteIcon,
 };

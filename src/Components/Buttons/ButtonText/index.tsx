@@ -5,12 +5,18 @@ import React, {memo} from 'react';
 import {ImageBackground, TouchableOpacity} from 'react-native';
 
 const ButtonText = memo(function ButtonText(props: ButtonTextProps) {
-  const {style, Icon, isValid, onPress} = props;
+  const {
+    background = Constants.Images.ButtonTextBg,
+    style,
+    Icon,
+    isValid,
+    onPress,
+  } = props;
 
   return (
     <TouchableOpacity onPress={onPress} disabled={!isValid}>
       <ImageBackground
-        source={Constants.Images.ButtonTextBg}
+        source={background}
         style={[styles.backgroundStyle, style!]}>
         {Icon}
       </ImageBackground>
