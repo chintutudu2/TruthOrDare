@@ -1,7 +1,9 @@
 import {SpinnerProps} from '@components/Spinners/Spinner/interface';
 import {styles} from '@components/Spinners/Spinner/styles';
+import {Colors} from '@constants/Colors';
+import {Fonts} from '@constants/Fonts';
 import Constants from '@constants/index';
-import {dimension} from '@utils/ScalingUtils';
+import {dimension, fontSize} from '@utils/ScalingUtils';
 import React, {memo} from 'react';
 import {ImageBackground} from 'react-native';
 import Svg, {Text as SvgText, G, Path} from 'react-native-svg';
@@ -42,10 +44,11 @@ const Spinner = memo(function Spinner(props: SpinnerProps) {
         key={i}
         x={textX}
         y={textY}
+        fontFamily={Fonts.familyName.regular}
         textAnchor="middle"
-        fontSize="18"
+        fontSize={fontSize.bodyTextSize}
         fontWeight="bold"
-        fill="white">
+        fill={Colors.white}>
         {playersName[i]}
       </SvgText>,
     );

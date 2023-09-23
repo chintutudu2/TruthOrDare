@@ -8,3 +8,7 @@ export const SpinnerColors = [
   '#FF66A3',
   '#4D4D4D',
 ];
+
+export const Colors = {
+  white: '#FFFFFF',
+};
