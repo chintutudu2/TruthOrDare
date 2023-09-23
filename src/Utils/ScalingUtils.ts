@@ -42,6 +42,11 @@ export const dimension = {
   buttonCircleHeight: getScaleSizeWidth(68),
   buttonCircleWidth: getScaleSizeWidth(68),
 
+  spinnerWidth: getScaleSizeWidth(375),
+  spinnerHeight: getScaleSizeWidth(377),
+
+  spinnerInnerCircleWidth: getScaleSizeWidth(265),
+
   margin1: getScaleSizeWidth(1),
   margin2: getScaleSizeWidth(2),
   margin3: getScaleSizeWidth(3),
