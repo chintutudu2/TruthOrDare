@@ -8,15 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* TruthOrDareTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TruthOrDareTests.m */; };
+		046894C0CCCD4A8E893CB378 /* BalooThambi2-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 640388C04D124E17AC125C62 /* BalooThambi2-Medium.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-TruthOrDare.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-TruthOrDare.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		415F5C45C167406988E78EF8 /* BalooThambi2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73B0ADFBAAB545769FC808F4 /* BalooThambi2-Bold.ttf */; };
+		4D360A78DF88480ABE8A264B /* BalooThambi2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83AC37AEBAAF4E32BA1F82C9 /* BalooThambi2-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-TruthOrDare-TruthOrDareTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-TruthOrDare-TruthOrDareTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		415F5C45C167406988E78EF8 /* BalooThambi2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 73B0ADFBAAB545769FC808F4 /* BalooThambi2-Bold.ttf */; };
-		046894C0CCCD4A8E893CB378 /* BalooThambi2-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 640388C04D124E17AC125C62 /* BalooThambi2-Medium.ttf */; };
-		4D360A78DF88480ABE8A264B /* BalooThambi2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 83AC37AEBAAF4E32BA1F82C9 /* BalooThambi2-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,12 +44,12 @@
 		5709B34CF0A7D63546082F79 /* Pods-TruthOrDare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruthOrDare.release.xcconfig"; path = "Target Support Files/Pods-TruthOrDare/Pods-TruthOrDare.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-TruthOrDare-TruthOrDareTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruthOrDare-TruthOrDareTests.debug.xcconfig"; path = "Target Support Files/Pods-TruthOrDare-TruthOrDareTests/Pods-TruthOrDare-TruthOrDareTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-TruthOrDare.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TruthOrDare.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		640388C04D124E17AC125C62 /* BalooThambi2-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BalooThambi2-Medium.ttf"; path = "../src/Assets/Fonts/BalooThambi2-Medium.ttf"; sourceTree = "<group>"; };
+		73B0ADFBAAB545769FC808F4 /* BalooThambi2-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BalooThambi2-Bold.ttf"; path = "../src/Assets/Fonts/BalooThambi2-Bold.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = TruthOrDare/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83AC37AEBAAF4E32BA1F82C9 /* BalooThambi2-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "BalooThambi2-Regular.ttf"; path = "../src/Assets/Fonts/BalooThambi2-Regular.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-TruthOrDare-TruthOrDareTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TruthOrDare-TruthOrDareTests.release.xcconfig"; path = "Target Support Files/Pods-TruthOrDare-TruthOrDareTests/Pods-TruthOrDare-TruthOrDareTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		73B0ADFBAAB545769FC808F4 /* BalooThambi2-Bold.ttf */ = {isa = PBXFileReference; name = "BalooThambi2-Bold.ttf"; path = "../src/Assets/Fonts/BalooThambi2-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		640388C04D124E17AC125C62 /* BalooThambi2-Medium.ttf */ = {isa = PBXFileReference; name = "BalooThambi2-Medium.ttf"; path = "../src/Assets/Fonts/BalooThambi2-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		83AC37AEBAAF4E32BA1F82C9 /* BalooThambi2-Regular.ttf */ = {isa = PBXFileReference; name = "BalooThambi2-Regular.ttf"; path = "../src/Assets/Fonts/BalooThambi2-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,15 +156,15 @@
 			sourceTree = "<group>";
 		};
 		E2C0E9528A394E80BDBA0DC0 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				73B0ADFBAAB545769FC808F4 /* BalooThambi2-Bold.ttf */,
 				640388C04D124E17AC125C62 /* BalooThambi2-Medium.ttf */,
 				83AC37AEBAAF4E32BA1F82C9 /* BalooThambi2-Regular.ttf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 

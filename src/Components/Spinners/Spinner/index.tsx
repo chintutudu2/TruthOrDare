@@ -4,9 +4,19 @@ import {Colors} from '@constants/Colors';
 import {Fonts} from '@constants/Fonts';
 import Constants from '@constants/index';
 import {dimension, fontSize} from '@utils/ScalingUtils';
-import React, {memo} from 'react';
+import React, {memo, useEffect} from 'react';
 import {Image, ImageBackground} from 'react-native';
 import Svg, {Text as SvgText, G, Path} from 'react-native-svg';
+
+import Animated, {
+  useSharedValue,
+  useDerivedValue,
+  interpolate,
+  useAnimatedStyle,
+  withRepeat,
+  withSequence,
+  withSpring,
+} from 'react-native-reanimated';
 
 const Spinner = memo(function Spinner(props: SpinnerProps) {
   const {style, playersCount = 0, playersName = []} = props;
@@ -54,6 +64,34 @@ const Spinner = memo(function Spinner(props: SpinnerProps) {
     );
   }
 
+  const animation = useSharedValue(0);
+
+  const rotation = useDerivedValue(() => {
+    return interpolate(animation.value, [0, 1], [0, 360]);
+  });
+
+  const animationStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
+        {
+          rotate: rotation.value + 'deg',
+        },
+      ],
+    };
+  });
+
+  useEffect(() => {
+    const randomStopAngle = Math.random() * 360;
+
+    animation.value = withRepeat(
+      withSequence(
+        withSpring(randomStopAngle, {damping: 2, stiffness: 80, velocity: 5}),
+      ),
+      1,
+      false,
+    );
+  }, []);
+
   return (
     <ImageBackground
       source={Constants.Images.Spinner}
@@ -64,7 +102,9 @@ const Spinner = memo(function Spinner(props: SpinnerProps) {
         {paths}
         <G>{textLabels}</G>
       </Svg>
-      <Image source={Constants.Images.Bottle_1} style={styles.bottle} />
+      <Animated.View style={[styles.bottle, animationStyle]}>
+        <Image source={Constants.Images.Bottle_1} />
+      </Animated.View>
     </ImageBackground>
   );
 });
