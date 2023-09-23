@@ -5,7 +5,7 @@ import {Fonts} from '@constants/Fonts';
 import Constants from '@constants/index';
 import {dimension, fontSize} from '@utils/ScalingUtils';
 import React, {memo} from 'react';
-import {ImageBackground} from 'react-native';
+import {Image, ImageBackground} from 'react-native';
 import Svg, {Text as SvgText, G, Path} from 'react-native-svg';
 
 const Spinner = memo(function Spinner(props: SpinnerProps) {
@@ -64,6 +64,7 @@ const Spinner = memo(function Spinner(props: SpinnerProps) {
         {paths}
         <G>{textLabels}</G>
       </Svg>
+      <Image source={Constants.Images.Bottle_1} style={styles.bottle} />
     </ImageBackground>
   );
 });

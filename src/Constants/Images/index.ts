@@ -27,6 +27,7 @@ import SoundIcon from '@assets/Images/SoundIcon.png';
 import RankIcon from '@assets/Images/RankIcon.png';
 import BottleIcon from '@assets/Images/BottleIcon.png';
 import Spinner from '@assets/Images/Spinner.png';
+import Bottle_1 from '@assets/Images/Bottle_1.png';
 
 export const Images = {
   AppBackground_1,
@@ -58,4 +59,5 @@ export const Images = {
   RankIcon,
   BottleIcon,
   Spinner,
+  Bottle_1,
 };

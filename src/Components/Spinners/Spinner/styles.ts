@@ -8,4 +8,7 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  bottle: {
+    position: 'absolute',
+  },
 });
