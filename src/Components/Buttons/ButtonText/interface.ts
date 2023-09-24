@@ -4,7 +4,7 @@ import {TouchableOpacityProps, ViewStyle} from 'react-native';
 export interface ButtonTextProps {
   background?: any;
   style?: ViewStyle;
-  Icon?: ReactNode;
+  text?: string;
   isValid?: boolean;
   onPress?: TouchableOpacityProps['onPress'];
 }

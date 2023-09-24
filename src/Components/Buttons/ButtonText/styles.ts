@@ -1,4 +1,6 @@
-import {dimension} from '@utils/ScalingUtils';
+import {Colors} from '@constants/Colors';
+import {Fonts} from '@constants/Fonts';
+import {dimension, fontSize} from '@utils/ScalingUtils';
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
@@ -7,5 +9,10 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     height: dimension.buttonHeight,
     width: dimension.buttonWidth,
+  },
+  textStyle: {
+    fontFamily: Fonts.familyName.bold,
+    fontSize: fontSize.headerTextSize,
+    color: Colors.white,
   },
 });

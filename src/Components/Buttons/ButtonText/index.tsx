@@ -2,13 +2,13 @@ import {ButtonTextProps} from '@components/Buttons/ButtonText/interface';
 import {styles} from '@components/Buttons/ButtonText/styles';
 import Constants from '@constants/index';
 import React, {memo} from 'react';
-import {ImageBackground, TouchableOpacity} from 'react-native';
+import {ImageBackground, Text, TouchableOpacity} from 'react-native';
 
 const ButtonText = memo(function ButtonText(props: ButtonTextProps) {
   const {
     background = Constants.Images.ButtonTextBg,
     style,
-    Icon,
+    text,
     isValid,
     onPress,
   } = props;
@@ -18,7 +18,7 @@ const ButtonText = memo(function ButtonText(props: ButtonTextProps) {
       <ImageBackground
         source={background}
         style={[styles.backgroundStyle, style!]}>
-        {Icon}
+        {text && <Text style={styles.textStyle}>{text}</Text>}
       </ImageBackground>
     </TouchableOpacity>
   );
