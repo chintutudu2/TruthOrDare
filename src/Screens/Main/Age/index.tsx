@@ -23,7 +23,7 @@ const Age = memo(function Age(props) {
         />
         <ButtonText
           isValid
-          Icon={<Image source={Constants.Images.KidsText} />}
+          text={Constants.Strings.kids}
           onPress={onPressKids}
         />
       </RowView>
@@ -33,10 +33,7 @@ const Age = memo(function Age(props) {
           isValid
           Icon={<Image source={Constants.Images.TeensIcon} />}
         />
-        <ButtonText
-          isValid
-          Icon={<Image source={Constants.Images.TeensText} />}
-        />
+        <ButtonText isValid text={Constants.Strings.teens} />
       </RowView>
       <RowView style={styles.buttonContainer}>
         <ButtonIcon
@@ -44,10 +41,7 @@ const Age = memo(function Age(props) {
           isValid
           Icon={<Image source={Constants.Images.AdultsIcon} />}
         />
-        <ButtonText
-          isValid
-          Icon={<Image source={Constants.Images.AdultsText} />}
-        />
+        <ButtonText isValid text={Constants.Strings.adults} />
       </RowView>
       <RowView style={styles.backButton}>
         <ButtonIcon

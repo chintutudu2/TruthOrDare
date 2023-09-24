@@ -36,6 +36,9 @@ export const dimension = {
   buttonHeight: getScaleSizeWidth(73),
   buttonWidth: getScaleSizeWidth(211),
 
+  buttonHeight56: getScaleSizeWidth(56),
+  buttonWidth209: getScaleSizeWidth(209),
+
   buttonLongHeight: getScaleSizeWidth(68),
   buttonLongWidth: getScaleSizeWidth(301),
 
@@ -46,6 +49,9 @@ export const dimension = {
   spinnerHeight: getScaleSizeWidth(377),
 
   spinnerInnerCircleWidth: getScaleSizeWidth(265),
+
+  selectModalWidth: getScaleSizeWidth(298),
+  selectModalHeight: getScaleSizeWidth(258),
 
   margin1: getScaleSizeWidth(1),
   margin2: getScaleSizeWidth(2),

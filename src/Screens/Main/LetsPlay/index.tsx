@@ -22,7 +22,7 @@ const LetsPlay = memo(function LetsPlay(props) {
         />
         <ButtonText
           isValid
-          Icon={<Image source={Constants.Images.LetsPlayText} />}
+          text={Constants.Strings.lets_play}
           onPress={onPressLetsPlay}
         />
       </RowView>
@@ -32,10 +32,7 @@ const LetsPlay = memo(function LetsPlay(props) {
           isValid
           Icon={<Image source={Constants.Images.SettingIcon} />}
         />
-        <ButtonText
-          isValid
-          Icon={<Image source={Constants.Images.SettingText} />}
-        />
+        <ButtonText isValid text={Constants.Strings.setting} />
       </RowView>
       <RowView style={styles.buttonContainer}>
         <ButtonIcon
@@ -43,10 +40,7 @@ const LetsPlay = memo(function LetsPlay(props) {
           isValid
           Icon={<Image source={Constants.Images.StarIcon} />}
         />
-        <ButtonText
-          isValid
-          Icon={<Image source={Constants.Images.RateUsText} />}
-        />
+        <ButtonText isValid text={Constants.Strings.rate_us} />
       </RowView>
     </Components.Layouts.AppLayout>
   );

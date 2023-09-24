@@ -19,7 +19,7 @@ const AddPlayers = memo(function AddPlayers(props) {
             background={Constants.Images.ButtonTextBgBlue}
             style={styles.buttonTextContainer}
             isValid
-            Icon={<Image source={Constants.Images.KidsText} />}
+            text={Constants.Strings.kids}
           />
           <ButtonIcon
             background={Constants.Images.ButtonIconBgRed}
