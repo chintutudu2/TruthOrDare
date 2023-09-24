@@ -39,6 +39,9 @@ export const dimension = {
   buttonHeight56: getScaleSizeWidth(56),
   buttonWidth209: getScaleSizeWidth(209),
 
+  buttonHeight49: getScaleSizeWidth(49),
+  buttonWidth122: getScaleSizeWidth(122),
+
   buttonLongHeight: getScaleSizeWidth(68),
   buttonLongWidth: getScaleSizeWidth(301),
 
@@ -53,6 +56,9 @@ export const dimension = {
   selectModalWidth: getScaleSizeWidth(298),
   selectModalHeight: getScaleSizeWidth(258),
 
+  questionModalWidth: getScaleSizeWidth(354),
+  questionModalHeight: getScaleSizeWidth(264),
+
   margin1: getScaleSizeWidth(1),
   margin2: getScaleSizeWidth(2),
   margin3: getScaleSizeWidth(3),
@@ -64,10 +70,13 @@ export const dimension = {
   margin9: getScaleSizeWidth(9),
   margin10: getScaleSizeWidth(10),
   margin12: getScaleSizeWidth(12),
+  margin13: getScaleSizeWidth(13),
   margin14: getScaleSizeWidth(14),
   margin16: getScaleSizeWidth(16),
+  margin18: getScaleSizeWidth(18),
   margin20: getScaleSizeWidth(20),
   margin30: getScaleSizeWidth(30),
+  margin40: getScaleSizeWidth(40),
 };
 
 export const fontSize = {

@@ -7,4 +7,6 @@ export const Strings = {
   lets_play: "Let's Play",
   setting: 'Setting',
   rate_us: 'Rate Us',
+  forfeit: 'Forfeit',
+  done: 'Done',
 };

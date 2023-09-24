@@ -26,6 +26,9 @@ import SelectModalBackground from '@assets/Images/SelectModalBackground.png';
 import ModalHeadingBackground from '@assets/Images/ModalHeadingBackground.png';
 import GreenModalButtonBg from '@assets/Images/GreenModalButtonBg.png';
 import YellowModalButtonBg from '@assets/Images/YellowModalButtonBg.png';
+import QuestionModalBackground from '@assets/Images/QuestionModalBackground.png';
+import GreenModalButtonHlfBg from '@assets/Images/GreenModalButtonHlfBg.png';
+import YellowModalButtonHlfBg from '@assets/Images/YellowModalButtonHlfBg.png';
 
 export const Images = {
   AppBackground_1,
@@ -56,4 +59,7 @@ export const Images = {
   ModalHeadingBackground,
   GreenModalButtonBg,
   YellowModalButtonBg,
+  QuestionModalBackground,
+  GreenModalButtonHlfBg,
+  YellowModalButtonHlfBg,
 };
