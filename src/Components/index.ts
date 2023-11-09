@@ -3,6 +3,7 @@ import * as Buttons from './Buttons';
 import * as Flexs from './Flexs';
 import * as Spinners from './Spinners';
 import * as Modals from './Modals';
+import * as Containers from './Containers';
 
 export default {
   Layouts,
@@ -10,4 +11,5 @@ export default {
   Flexs,
   Spinners,
   Modals,
+  Containers,
 };

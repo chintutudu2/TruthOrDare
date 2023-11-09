@@ -6,14 +6,22 @@ import Constants from '@constants/index';
 import {ButtonIcon, ButtonText} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
 import {onPressLetsPlay} from '@screens/Main/LetsPlay/helper';
+import {ImageContainer} from '@components/Containers';
 
 const LetsPlay = memo(function LetsPlay(props) {
   return (
     <Components.Layouts.AppLayout
       hasScrollView={false}
       contentContainerStyle={styles.contentContainer}>
-      <Image source={Constants.Images.TruthDareGameLogo} style={styles.logo} />
-      <Image source={Constants.Images.SpinnerLogo} style={styles.spinner} />
+      <ImageContainer width={260} height={52} style={styles.logoContainer}>
+        <Image
+          source={Constants.Images.TruthDareGameLogo}
+          style={styles.logo}
+        />
+      </ImageContainer>
+      <ImageContainer width={256} height={256} style={styles.spinnerContainer}>
+        <Image source={Constants.Images.SpinnerLogo_1} style={styles.spinner} />
+      </ImageContainer>
       <RowView style={styles.buttonContainer}>
         <ButtonIcon
           style={styles.iconButton}
