@@ -11,7 +11,7 @@ import {ModalType} from '@interfaces/ModalInterfaces';
 const players: string[] = ['Jackson', 'Scarlett', 'Liam'];
 
 const Game = memo(function Game(props) {
-  const [isModalVisible, setIsModalVisible] = useState(true);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   function onPressPrimaryButton() {
     setIsModalVisible(false);
