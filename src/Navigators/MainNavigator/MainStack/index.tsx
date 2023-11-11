@@ -11,6 +11,7 @@ const MainStack = ({navigation, route}: {navigation?: any; route?: any}) => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        gestureEnabled: false,
       }}>
       {CreateScreen(Stack)(NavRoutes.LetsPlay, LetsPlay)}
       {CreateScreen(Stack)(NavRoutes.Age, Age)}
