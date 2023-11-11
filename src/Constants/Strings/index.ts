@@ -9,4 +9,8 @@ export const Strings = {
   rate_us: 'Rate Us',
   forfeit: 'Forfeit',
   done: 'Done',
+  add_truth: 'Add Truth',
+  add_dare: 'Add Dare',
+  sound_on: 'Sound On',
+  share: 'Share',
 };

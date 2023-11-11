@@ -18,15 +18,6 @@ export const styles = StyleSheet.create({
     height: '100%',
     resizeMode: 'contain',
   },
-  spinnerContainer: {
-    marginTop: dimension.margin16,
-  },
-  spinner: {
-    flex: 1,
-    width: '100%',
-    height: '100%',
-    resizeMode: 'contain',
-  },
   buttonContainer: {
     marginTop: dimension.margin12,
   },

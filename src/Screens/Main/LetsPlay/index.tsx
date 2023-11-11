@@ -5,7 +5,7 @@ import {Image} from 'react-native';
 import Constants from '@constants/index';
 import {ButtonIcon, ButtonText} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
-import {onPressLetsPlay} from '@screens/Main/LetsPlay/helper';
+import {onPressLetsPlay, onPressSettings} from '@screens/Main/LetsPlay/helper';
 import {ImageContainer} from '@components/Containers';
 
 const LetsPlay = memo(function LetsPlay(props) {
@@ -40,8 +40,13 @@ const LetsPlay = memo(function LetsPlay(props) {
           style={styles.iconButton}
           isValid
           Icon={<Image source={Constants.Images.SettingIcon} />}
+          onPress={onPressSettings}
         />
-        <ButtonText isValid text={Constants.Strings.setting} />
+        <ButtonText
+          isValid
+          text={Constants.Strings.setting}
+          onPress={onPressSettings}
+        />
       </RowView>
       <RowView style={styles.buttonContainer}>
         <ButtonIcon

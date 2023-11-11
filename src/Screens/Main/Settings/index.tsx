@@ -1,14 +1,14 @@
 import Components from '@components/index';
 import React, {memo} from 'react';
-import {styles} from '@screens/Main/Age/styles';
+import {styles} from '@screens/Main/Settings/styles';
 import {Image, View} from 'react-native';
 import Constants from '@constants/index';
 import {ButtonIcon, ButtonText} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
-import {onPressBack, onPressKids} from '@screens/Main/Age/helpers';
+import {onPressBack} from '@screens/Main/Settings/helpers';
 import {ImageContainer} from '@components/Containers';
 
-const Age = memo(function Age(props) {
+const Settings = memo(function Settings(props) {
   return (
     <Components.Layouts.AppLayout
       background={Constants.Images.AppBackground_2}
@@ -21,43 +21,37 @@ const Age = memo(function Age(props) {
             style={styles.logo}
           />
         </ImageContainer>
-        <ImageContainer
-          width={256}
-          height={256}
-          style={styles.spinnerContainer}>
-          <Image
-            source={Constants.Images.SpinnerLogo_1}
-            style={styles.spinner}
-          />
-        </ImageContainer>
         <RowView style={styles.buttonContainer}>
           <ButtonIcon
             style={styles.iconButton}
             isValid
-            Icon={<Image source={Constants.Images.KidsIcon} />}
-            onPress={onPressKids}
+            Icon={<Image source={Constants.Images.PlusIcon} />}
           />
-          <ButtonText
-            isValid
-            text={Constants.Strings.kids}
-            onPress={onPressKids}
-          />
+          <ButtonText isValid text={Constants.Strings.add_truth} />
         </RowView>
         <RowView style={styles.buttonContainer}>
           <ButtonIcon
             style={styles.iconButton}
             isValid
-            Icon={<Image source={Constants.Images.TeensIcon} />}
+            Icon={<Image source={Constants.Images.PlusIcon} />}
           />
-          <ButtonText isValid text={Constants.Strings.teens} />
+          <ButtonText isValid text={Constants.Strings.add_dare} />
         </RowView>
         <RowView style={styles.buttonContainer}>
           <ButtonIcon
             style={styles.iconButton}
             isValid
-            Icon={<Image source={Constants.Images.AdultsIcon} />}
+            Icon={<Image source={Constants.Images.MusicIcon} />}
           />
-          <ButtonText isValid text={Constants.Strings.adults} />
+          <ButtonText isValid text={Constants.Strings.sound_on} />
+        </RowView>
+        <RowView style={styles.buttonContainer}>
+          <ButtonIcon
+            style={styles.iconButton}
+            isValid
+            Icon={<Image source={Constants.Images.ShareIcon} />}
+          />
+          <ButtonText isValid text={Constants.Strings.share} />
         </RowView>
       </View>
       <RowView style={styles.backButton}>
@@ -71,4 +65,4 @@ const Age = memo(function Age(props) {
   );
 });
 
-export {Age};
+export {Settings};

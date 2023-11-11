@@ -1,6 +1,6 @@
 import {NavRoutes} from '@constants/NavRoutes';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {AddPlayers, Age, Game, LetsPlay} from '@screens/Main';
+import {AddPlayers, Age, Game, LetsPlay, Settings} from '@screens/Main';
 import {CreateScreen} from '@utils/NavUtils';
 import React from 'react';
 
@@ -17,6 +17,7 @@ const MainStack = ({navigation, route}: {navigation?: any; route?: any}) => {
       {CreateScreen(Stack)(NavRoutes.Age, Age)}
       {CreateScreen(Stack)(NavRoutes.AddPlayers, AddPlayers)}
       {CreateScreen(Stack)(NavRoutes.Game, Game)}
+      {CreateScreen(Stack)(NavRoutes.Settings, Settings)}
     </Stack.Navigator>
   );
 };

@@ -5,4 +5,5 @@ export enum NavRoutes {
   Age = 'Age',
   Game = 'Game',
   LetsPlay = 'LetsPlay',
+  Settings = 'Settings',
 }

@@ -7,4 +7,9 @@ function onPressLetsPlay() {
   push(Constants.NavRoutes.Age);
 }
 
-export {onPressLetsPlay};
+function onPressSettings() {
+  hapticFeedback.triggerImpactHeavy();
+  push(Constants.NavRoutes.Settings);
+}
+
+export {onPressLetsPlay, onPressSettings};

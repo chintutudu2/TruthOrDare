@@ -29,6 +29,9 @@ import YellowModalButtonBg from '@assets/Images/YellowModalButtonBg.png';
 import QuestionModalBackground from '@assets/Images/QuestionModalBackground.png';
 import GreenModalButtonHlfBg from '@assets/Images/GreenModalButtonHlfBg.png';
 import YellowModalButtonHlfBg from '@assets/Images/YellowModalButtonHlfBg.png';
+import PlusIcon from '@assets/Images/PlusIcon.png';
+import MusicIcon from '@assets/Images/MusicIcon.png';
+import ShareIcon from '@assets/Images/ShareIcon.png';
 
 export const Images = {
   AppBackground_1,
@@ -62,4 +65,7 @@ export const Images = {
   QuestionModalBackground,
   GreenModalButtonHlfBg,
   YellowModalButtonHlfBg,
+  PlusIcon,
+  MusicIcon,
+  ShareIcon,
 };
