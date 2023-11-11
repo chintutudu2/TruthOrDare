@@ -5,7 +5,7 @@ import {Image} from 'react-native';
 import Constants from '@constants/index';
 import {ButtonIcon, ButtonText} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
-import {onPressKids} from '@screens/Main/Age/helpers';
+import {onPressBack, onPressKids} from '@screens/Main/Age/helpers';
 import {ImageContainer} from '@components/Containers';
 
 const Age = memo(function Age(props) {
@@ -28,6 +28,7 @@ const Age = memo(function Age(props) {
           style={styles.iconButton}
           isValid
           Icon={<Image source={Constants.Images.KidsIcon} />}
+          onPress={onPressKids}
         />
         <ButtonText
           isValid
@@ -55,6 +56,7 @@ const Age = memo(function Age(props) {
         <ButtonIcon
           isValid
           Icon={<Image source={Constants.Images.BackIcon} />}
+          onPress={onPressBack}
         />
       </RowView>
     </Components.Layouts.AppLayout>

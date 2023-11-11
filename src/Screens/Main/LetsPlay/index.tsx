@@ -27,6 +27,7 @@ const LetsPlay = memo(function LetsPlay(props) {
           style={styles.iconButton}
           isValid
           Icon={<Image source={Constants.Images.PlayIcon} />}
+          onPress={onPressLetsPlay}
         />
         <ButtonText
           isValid
