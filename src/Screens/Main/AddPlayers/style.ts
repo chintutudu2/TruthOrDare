@@ -4,15 +4,21 @@ import {StyleSheet} from 'react-native';
 export const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
-    justifyContent: 'space-between',
   },
-  viewContainer: {
+  container: {
+    flex: 1,
     alignItems: 'center',
   },
-  logo: {
-    marginTop: dimension.margin30,
+  logoContainer: {
+    marginTop: dimension.appMargin,
   },
-  buttonContainer: {
+  logo: {
+    flex: 1,
+    width: '100%',
+    height: '100%',
+    resizeMode: 'contain',
+  },
+  nameRow: {
     marginTop: dimension.margin10,
   },
   buttonTextContainer: {
@@ -26,5 +32,6 @@ export const styles = StyleSheet.create({
     width: dimension.appViewWidth,
     justifyContent: 'space-between',
     paddingHorizontal: dimension.margin10,
+    marginBottom: dimension.appMargin,
   },
 });

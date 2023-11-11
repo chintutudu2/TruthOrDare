@@ -32,6 +32,7 @@ import YellowModalButtonHlfBg from '@assets/Images/YellowModalButtonHlfBg.png';
 import PlusIcon from '@assets/Images/PlusIcon.png';
 import MusicIcon from '@assets/Images/MusicIcon.png';
 import ShareIcon from '@assets/Images/ShareIcon.png';
+import TextInputBg from '@assets/Images/TextInputBg.png';
 
 export const Images = {
   AppBackground_1,
@@ -68,4 +69,5 @@ export const Images = {
   PlusIcon,
   MusicIcon,
   ShareIcon,
+  TextInputBg,
 };

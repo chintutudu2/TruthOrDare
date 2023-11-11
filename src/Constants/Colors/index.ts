@@ -11,4 +11,5 @@ export const SpinnerColors = [
 
 export const Colors = {
   white: '#FFFFFF',
+  blue: '#69AEFF',
 };
