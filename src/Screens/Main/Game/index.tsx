@@ -13,10 +13,20 @@ import {Spinner} from '@components/Spinners';
 const players: string[] = ['Jackson', 'Scarlett', 'Liam'];
 
 const Game = memo(function Game(props) {
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible, setIsModalVisible] = useState(true);
 
-  function onPressPrimaryButton() {
-    setIsModalVisible(false);
+  function onPressPrimaryButton(type: ModalType) {
+    switch (type) {
+      case ModalType.Select:
+        setIsModalVisible(false);
+        break;
+      case ModalType.Question:
+        setIsModalVisible(false);
+        break;
+      case ModalType.Score:
+        setIsModalVisible(false);
+        break;
+    }
   }
 
   return (
@@ -51,11 +61,11 @@ const Game = memo(function Game(props) {
       </RowView>
       <Components.Modals.GameModal
         isModalVisible={isModalVisible}
-        modalType={ModalType.Question}
+        modalType={ModalType.Score}
         question="If you Could have brought any
         special  gift for a birthday party
         what would it be?"
-        onPressPrimaryButton={onPressPrimaryButton}
+        onPressPrimaryButton={() => onPressPrimaryButton(ModalType.Score)}
       />
     </Components.Layouts.AppLayout>
   );

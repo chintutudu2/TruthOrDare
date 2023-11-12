@@ -15,6 +15,12 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  scoreModal: {
+    width: dimension.scoreModalWidth,
+    height: dimension.scoreModalHeight,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
   modalHeading: {
     width: dimension.buttonWidth,
     height: dimension.buttonHeight,
@@ -27,6 +33,13 @@ export const styles = StyleSheet.create({
     fontFamily: Fonts.familyName.bold,
     fontSize: fontSize.headerTextSize,
     color: Colors.white,
+  },
+  playerName: {
+    marginRight: dimension.appMargin,
+    fontSize: fontSize.bodyTextSize,
+  },
+  playerScore: {
+    fontSize: fontSize.bodyTextSize,
   },
   selectButton: {
     width: dimension.buttonWidth209,
@@ -58,5 +71,14 @@ export const styles = StyleSheet.create({
     width: dimension.buttonWidth122,
     height: dimension.buttonHeight49,
     marginLeft: dimension.margin13,
+  },
+  nameContainer: {
+    width: '100%',
+    alignItems: 'center',
+    marginBottom: dimension.margin30,
+  },
+  backContainer: {
+    position: 'absolute',
+    bottom: dimension.appMargin,
   },
 });

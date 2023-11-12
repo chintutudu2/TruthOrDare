@@ -62,6 +62,9 @@ export const dimension = {
   questionModalWidth: getScaleSizeWidth(354),
   questionModalHeight: getScaleSizeWidth(264),
 
+  scoreModalWidth: getScaleSizeWidth(354),
+  scoreModalHeight: getScaleSizeWidth(306),
+
   margin1: getScaleSizeWidth(1),
   margin2: getScaleSizeWidth(2),
   margin3: getScaleSizeWidth(3),

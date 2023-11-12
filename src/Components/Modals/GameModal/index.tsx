@@ -1,4 +1,4 @@
-import {ButtonText} from '@components/Buttons';
+import {ButtonIcon, ButtonText} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
 import {GameModalProps} from '@components/Modals/GameModal/interface';
 import {styles} from '@components/Modals/GameModal/styles';
@@ -6,7 +6,7 @@ import {Colors} from '@constants/Colors';
 import Constants from '@constants/index';
 import {ModalType} from '@interfaces/ModalInterfaces';
 import React, {memo} from 'react';
-import {ImageBackground, View, Text} from 'react-native';
+import {ImageBackground, View, Text, Image} from 'react-native';
 import Modal from 'react-native-modal';
 
 const GameModal = memo(function GameModal(props: GameModalProps) {
@@ -79,6 +79,68 @@ const GameModal = memo(function GameModal(props: GameModalProps) {
                 onPress={onPressSecondaryButton}
               />
             </RowView>
+          </ImageBackground>
+        )}
+        {modalType == ModalType.Score && (
+          <ImageBackground
+            source={Constants.Images.SelectModalBackground}
+            resizeMode="cover"
+            style={styles.scoreModal}>
+            <ImageBackground
+              source={Constants.Images.ModalHeadingBackground}
+              resizeMode="cover"
+              style={styles.modalHeading}>
+              <Text style={styles.modalHeadingText}>Score Card</Text>
+            </ImageBackground>
+            <View style={styles.nameContainer}>
+              <RowView>
+                <Text style={[styles.modalHeadingText, styles.playerName]}>
+                  Jack
+                </Text>
+                <Text style={[styles.modalHeadingText, styles.playerScore]}>
+                  03
+                </Text>
+              </RowView>
+              <RowView>
+                <Text style={[styles.modalHeadingText, styles.playerName]}>
+                  Lissa
+                </Text>
+                <Text style={[styles.modalHeadingText, styles.playerScore]}>
+                  02
+                </Text>
+              </RowView>
+              <RowView>
+                <Text style={[styles.modalHeadingText, styles.playerName]}>
+                  Sharlo
+                </Text>
+                <Text style={[styles.modalHeadingText, styles.playerScore]}>
+                  09
+                </Text>
+              </RowView>
+              <RowView>
+                <Text style={[styles.modalHeadingText, styles.playerName]}>
+                  Ryan
+                </Text>
+                <Text style={[styles.modalHeadingText, styles.playerScore]}>
+                  03
+                </Text>
+              </RowView>
+              <RowView>
+                <Text style={[styles.modalHeadingText, styles.playerName]}>
+                  Alexender
+                </Text>
+                <Text style={[styles.modalHeadingText, styles.playerScore]}>
+                  03
+                </Text>
+              </RowView>
+            </View>
+            <View style={styles.backContainer}>
+              <ButtonIcon
+                isValid
+                Icon={<Image source={Constants.Images.BackIcon} />}
+                onPress={onPressPrimaryButton}
+              />
+            </View>
           </ImageBackground>
         )}
       </View>
