@@ -6,7 +6,7 @@ import Constants from '@constants/index';
 import {ButtonIcon, ButtonText} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
 import {ImageContainer} from '@components/Containers';
-import {onPressBack} from '@screens/Main/AddPlayers/helpers';
+import {onPressBack, onPressPlay} from '@screens/Main/AddPlayers/helpers';
 import {InputText} from '@components/Inputs';
 
 const AddPlayers = memo(function AddPlayers(props) {
@@ -76,6 +76,7 @@ const AddPlayers = memo(function AddPlayers(props) {
         <ButtonIcon
           isValid
           Icon={<Image source={Constants.Images.PlayIcon} />}
+          onPress={onPressPlay}
         />
       </RowView>
     </Components.Layouts.AppLayout>

@@ -1,4 +1,5 @@
-import {pop} from '@helpers/NavigatorHelper';
+import Constants from '@constants/index';
+import {pop, push} from '@helpers/NavigatorHelper';
 import hapticFeedback from '@utils/HapticUtils';
 
 function onPressBack() {
@@ -6,4 +7,9 @@ function onPressBack() {
   pop();
 }
 
-export {onPressBack};
+function onPressPlay() {
+  hapticFeedback.triggerImpactHeavy();
+  push(Constants.NavRoutes.Game);
+}
+
+export {onPressBack, onPressPlay};

@@ -1,11 +1,13 @@
 import Components from '@components/index';
 import React, {memo, useState} from 'react';
 import {styles} from '@screens/Main/Game/styles';
-import {Image} from 'react-native';
+import {Image, View} from 'react-native';
 import Constants from '@constants/index';
 import {ButtonIcon} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
 import {ModalType} from '@interfaces/ModalInterfaces';
+import {ImageContainer} from '@components/Containers';
+import {Spinner} from '@components/Spinners';
 
 //FIXME: Will be removed when store is added
 const players: string[] = ['Jackson', 'Scarlett', 'Liam'];
@@ -22,11 +24,17 @@ const Game = memo(function Game(props) {
       background={Constants.Images.AppBackground_3}
       hasScrollView={false}
       contentContainerStyle={styles.contentContainer}>
-      <Image source={Constants.Images.TruthDareGameLogo} style={styles.logo} />
-      <Components.Spinners.Spinner
-        playersCount={players.length}
-        playersName={players}
-      />
+      <View style={styles.container}>
+        <ImageContainer width={260} height={52} style={styles.logoContainer}>
+          <Image
+            source={Constants.Images.TruthDareGameLogo}
+            style={styles.logo}
+          />
+        </ImageContainer>
+        <View style={styles.spinnerContainer}>
+          <Spinner playersCount={players.length} playersName={players} />
+        </View>
+      </View>
       <RowView style={styles.footerContainer}>
         <ButtonIcon
           isValid
