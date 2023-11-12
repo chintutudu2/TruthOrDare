@@ -5,7 +5,7 @@ import {Image, View} from 'react-native';
 import Constants from '@constants/index';
 import {ButtonIcon, ButtonText} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
-import {onPressBack, onPressKids} from '@screens/Main/Age/helpers';
+import {onPressBack, onPressAge} from '@screens/Main/Age/helpers';
 import {ImageContainer} from '@components/Containers';
 
 const Age = memo(function Age(props) {
@@ -35,12 +35,12 @@ const Age = memo(function Age(props) {
             style={styles.iconButton}
             isValid
             Icon={<Image source={Constants.Images.KidsIcon} />}
-            onPress={onPressKids}
+            onPress={() => onPressAge(Constants.Strings.kids)}
           />
           <ButtonText
             isValid
             text={Constants.Strings.kids}
-            onPress={onPressKids}
+            onPress={() => onPressAge(Constants.Strings.kids)}
           />
         </RowView>
         <RowView style={styles.buttonContainer}>
@@ -48,16 +48,26 @@ const Age = memo(function Age(props) {
             style={styles.iconButton}
             isValid
             Icon={<Image source={Constants.Images.TeensIcon} />}
+            onPress={() => onPressAge(Constants.Strings.kids)}
           />
-          <ButtonText isValid text={Constants.Strings.teens} />
+          <ButtonText
+            isValid
+            text={Constants.Strings.teens}
+            onPress={() => onPressAge(Constants.Strings.kids)}
+          />
         </RowView>
         <RowView style={styles.buttonContainer}>
           <ButtonIcon
             style={styles.iconButton}
             isValid
             Icon={<Image source={Constants.Images.AdultsIcon} />}
+            onPress={() => onPressAge(Constants.Strings.kids)}
           />
-          <ButtonText isValid text={Constants.Strings.adults} />
+          <ButtonText
+            isValid
+            text={Constants.Strings.adults}
+            onPress={() => onPressAge(Constants.Strings.kids)}
+          />
         </RowView>
       </View>
       <RowView style={styles.backButton}>

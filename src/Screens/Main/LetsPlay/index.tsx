@@ -51,10 +51,9 @@ const LetsPlay = memo(function LetsPlay(props) {
       <RowView style={styles.buttonContainer}>
         <ButtonIcon
           style={styles.iconButton}
-          isValid
           Icon={<Image source={Constants.Images.StarIcon} />}
         />
-        <ButtonText isValid text={Constants.Strings.rate_us} />
+        <ButtonText text={Constants.Strings.rate_us} />
       </RowView>
     </Components.Layouts.AppLayout>
   );
