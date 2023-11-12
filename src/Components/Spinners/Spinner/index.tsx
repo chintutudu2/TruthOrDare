@@ -14,10 +14,13 @@ import Animated, {
   interpolate,
   useAnimatedStyle,
 } from 'react-native-reanimated';
-import {onPressSpin} from '@components/Spinners/Spinner/helper';
+import {
+  getBottleImageFromNumber,
+  onPressSpin,
+} from '@components/Spinners/Spinner/helper';
 
 const Spinner = memo(function Spinner(props: SpinnerProps) {
-  const {style, playersCount = 0, playersName = []} = props;
+  const {style, playersCount = 0, playersName = [], bottleNumber = 1} = props;
 
   const radius = dimension.spinnerInnerCircleWidth / 2;
   const cx = dimension.spinnerInnerCircleWidth / 2;
@@ -90,7 +93,7 @@ const Spinner = memo(function Spinner(props: SpinnerProps) {
       </Svg>
       <TouchableWithoutFeedback onPress={() => onPressSpin(animation)}>
         <Animated.View style={[styles.bottle, animationStyle]}>
-          <Image source={Constants.Images.Bottle_1} />
+          <Image source={getBottleImageFromNumber(bottleNumber)} />
         </Animated.View>
       </TouchableWithoutFeedback>
     </ImageBackground>

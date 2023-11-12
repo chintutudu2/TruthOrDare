@@ -8,7 +8,12 @@ import {RowView} from '@components/Flexs';
 import {ModalType} from '@interfaces/ModalInterfaces';
 import {ImageContainer} from '@components/Containers';
 import {Spinner} from '@components/Spinners';
-import {onPressScore, onPressSound} from '@screens/Main/Game/helper';
+import {
+  onPressBottle,
+  onPressPrimaryButton,
+  onPressScore,
+  onPressSound,
+} from '@screens/Main/Game/helper';
 
 //FIXME: Will be removed when store is added
 const players: string[] = ['Jackson', 'Scarlett', 'Liam'];
@@ -16,20 +21,7 @@ const players: string[] = ['Jackson', 'Scarlett', 'Liam'];
 const Game = memo(function Game(props) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isSoundOn, setIsSoundOn] = useState(true);
-
-  function onPressPrimaryButton(type: ModalType) {
-    switch (type) {
-      case ModalType.Select:
-        setIsModalVisible(false);
-        break;
-      case ModalType.Question:
-        setIsModalVisible(false);
-        break;
-      case ModalType.Score:
-        setIsModalVisible(false);
-        break;
-    }
-  }
+  const [bottleNumber, setBottleNumber] = useState(1);
 
   return (
     <Components.Layouts.AppLayout
@@ -44,7 +36,11 @@ const Game = memo(function Game(props) {
           />
         </ImageContainer>
         <View style={styles.spinnerContainer}>
-          <Spinner playersCount={players.length} playersName={players} />
+          <Spinner
+            playersCount={players.length}
+            playersName={players}
+            bottleNumber={bottleNumber}
+          />
         </View>
       </View>
       <RowView style={styles.footerContainer}>
@@ -69,6 +65,7 @@ const Game = memo(function Game(props) {
         <ButtonIcon
           isValid
           Icon={<Image source={Constants.Images.BottleIcon} />}
+          onPress={() => onPressBottle(bottleNumber, setBottleNumber)}
         />
       </RowView>
       <Components.Modals.GameModal
@@ -77,7 +74,13 @@ const Game = memo(function Game(props) {
         question="If you Could have brought any
         special  gift for a birthday party
         what would it be?"
-        onPressPrimaryButton={() => onPressPrimaryButton(ModalType.Score)}
+        onPressPrimaryButton={() =>
+          onPressPrimaryButton(
+            ModalType.Score,
+            isModalVisible,
+            setIsModalVisible,
+          )
+        }
       />
     </Components.Layouts.AppLayout>
   );

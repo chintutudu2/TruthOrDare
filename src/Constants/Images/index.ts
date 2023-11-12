@@ -23,6 +23,18 @@ import RankIcon from '@assets/Images/RankIcon.png';
 import BottleIcon from '@assets/Images/BottleIcon.png';
 import Spinner from '@assets/Images/Spinner.png';
 import Bottle_1 from '@assets/Images/Bottle_1.png';
+import Bottle_2 from '@assets/Images/Bottle_2.png';
+import Bottle_3 from '@assets/Images/Bottle_3.png';
+import Bottle_4 from '@assets/Images/Bottle_4.png';
+import Bottle_5 from '@assets/Images/Bottle_5.png';
+import Bottle_6 from '@assets/Images/Bottle_6.png';
+import Bottle_7 from '@assets/Images/Bottle_7.png';
+import Bottle_8 from '@assets/Images/Bottle_8.png';
+import Bottle_9 from '@assets/Images/Bottle_9.png';
+import Bottle_10 from '@assets/Images/Bottle_10.png';
+import Bottle_11 from '@assets/Images/Bottle_11.png';
+import Bottle_12 from '@assets/Images/Bottle_12.png';
+import Bottle_13 from '@assets/Images/Bottle_13.png';
 import SelectModalBackground from '@assets/Images/SelectModalBackground.png';
 import ModalHeadingBackground from '@assets/Images/ModalHeadingBackground.png';
 import GreenModalButtonBg from '@assets/Images/GreenModalButtonBg.png';
@@ -61,6 +73,18 @@ export const Images = {
   BottleIcon,
   Spinner,
   Bottle_1,
+  Bottle_2,
+  Bottle_3,
+  Bottle_4,
+  Bottle_5,
+  Bottle_6,
+  Bottle_7,
+  Bottle_8,
+  Bottle_9,
+  Bottle_10,
+  Bottle_11,
+  Bottle_12,
+  Bottle_13,
   SelectModalBackground,
   ModalHeadingBackground,
   GreenModalButtonBg,

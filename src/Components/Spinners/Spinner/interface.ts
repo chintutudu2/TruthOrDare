@@ -4,4 +4,5 @@ export interface SpinnerProps {
   style?: ImageStyle;
   playersCount?: number;
   playersName?: string[];
+  bottleNumber?: number;
 }
