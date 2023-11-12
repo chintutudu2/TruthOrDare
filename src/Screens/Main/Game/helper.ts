@@ -14,4 +14,17 @@ function onPressScore(
   });
 }
 
-export {onPressScore};
+function onPressSound(
+  isSoundOn: boolean,
+  setIsSoundOn: {
+    (value: SetStateAction<boolean>): void;
+    (arg0: () => boolean): void;
+  },
+) {
+  hapticFeedback.triggerImpactHeavy();
+  setIsSoundOn(() => {
+    return !isSoundOn;
+  });
+}
+
+export {onPressScore, onPressSound};

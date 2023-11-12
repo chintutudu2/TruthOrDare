@@ -18,6 +18,7 @@ import ButtonTextBgBlue from '@assets/Images/ButtonTextBgBlue.png';
 import ButtonIconBgRed from '@assets/Images/ButtonIconBgRed.png';
 import DeleteIcon from '@assets/Images/DeleteIcon.png';
 import SoundIcon from '@assets/Images/SoundIcon.png';
+import SoundIconDisabled from '@assets/Images/SoundIconDisabled.png';
 import RankIcon from '@assets/Images/RankIcon.png';
 import BottleIcon from '@assets/Images/BottleIcon.png';
 import Spinner from '@assets/Images/Spinner.png';
@@ -55,6 +56,7 @@ export const Images = {
   ButtonIconBgRed,
   DeleteIcon,
   SoundIcon,
+  SoundIconDisabled,
   RankIcon,
   BottleIcon,
   Spinner,

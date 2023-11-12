@@ -8,13 +8,14 @@ import {RowView} from '@components/Flexs';
 import {ModalType} from '@interfaces/ModalInterfaces';
 import {ImageContainer} from '@components/Containers';
 import {Spinner} from '@components/Spinners';
-import {onPressScore} from '@screens/Main/Game/helper';
+import {onPressScore, onPressSound} from '@screens/Main/Game/helper';
 
 //FIXME: Will be removed when store is added
 const players: string[] = ['Jackson', 'Scarlett', 'Liam'];
 
 const Game = memo(function Game(props) {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isSoundOn, setIsSoundOn] = useState(true);
 
   function onPressPrimaryButton(type: ModalType) {
     switch (type) {
@@ -49,7 +50,16 @@ const Game = memo(function Game(props) {
       <RowView style={styles.footerContainer}>
         <ButtonIcon
           isValid
-          Icon={<Image source={Constants.Images.SoundIcon} />}
+          Icon={
+            <Image
+              source={
+                isSoundOn
+                  ? Constants.Images.SoundIcon
+                  : Constants.Images.SoundIconDisabled
+              }
+            />
+          }
+          onPress={() => onPressSound(isSoundOn, setIsSoundOn)}
         />
         <ButtonIcon
           isValid
