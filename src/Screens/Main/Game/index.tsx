@@ -8,12 +8,13 @@ import {RowView} from '@components/Flexs';
 import {ModalType} from '@interfaces/ModalInterfaces';
 import {ImageContainer} from '@components/Containers';
 import {Spinner} from '@components/Spinners';
+import {onPressScore} from '@screens/Main/Game/helper';
 
 //FIXME: Will be removed when store is added
 const players: string[] = ['Jackson', 'Scarlett', 'Liam'];
 
 const Game = memo(function Game(props) {
-  const [isModalVisible, setIsModalVisible] = useState(true);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   function onPressPrimaryButton(type: ModalType) {
     switch (type) {
@@ -53,6 +54,7 @@ const Game = memo(function Game(props) {
         <ButtonIcon
           isValid
           Icon={<Image source={Constants.Images.RankIcon} />}
+          onPress={() => onPressScore(isModalVisible, setIsModalVisible)}
         />
         <ButtonIcon
           isValid
