@@ -4,8 +4,8 @@ import {Colors} from '@constants/Colors';
 import {Fonts} from '@constants/Fonts';
 import Constants from '@constants/index';
 import {dimension, fontSize} from '@utils/ScalingUtils';
-import React, {memo, useEffect} from 'react';
-import {Image, ImageBackground} from 'react-native';
+import React, {memo} from 'react';
+import {Image, ImageBackground, TouchableWithoutFeedback} from 'react-native';
 import Svg, {Text as SvgText, G, Path} from 'react-native-svg';
 
 import Animated, {
@@ -13,10 +13,8 @@ import Animated, {
   useDerivedValue,
   interpolate,
   useAnimatedStyle,
-  withRepeat,
-  withSequence,
-  withSpring,
 } from 'react-native-reanimated';
+import {onPressSpin} from '@components/Spinners/Spinner/helper';
 
 const Spinner = memo(function Spinner(props: SpinnerProps) {
   const {style, playersCount = 0, playersName = []} = props;
@@ -80,18 +78,6 @@ const Spinner = memo(function Spinner(props: SpinnerProps) {
     };
   });
 
-  useEffect(() => {
-    const randomStopAngle = Math.random() * 360;
-
-    animation.value = withRepeat(
-      withSequence(
-        withSpring(randomStopAngle, {damping: 2, stiffness: 80, velocity: 5}),
-      ),
-      1,
-      false,
-    );
-  }, []);
-
   return (
     <ImageBackground
       source={Constants.Images.Spinner}
@@ -102,9 +88,11 @@ const Spinner = memo(function Spinner(props: SpinnerProps) {
         {paths}
         <G>{textLabels}</G>
       </Svg>
-      <Animated.View style={[styles.bottle, animationStyle]}>
-        <Image source={Constants.Images.Bottle_1} />
-      </Animated.View>
+      <TouchableWithoutFeedback onPress={() => onPressSpin(animation)}>
+        <Animated.View style={[styles.bottle, animationStyle]}>
+          <Image source={Constants.Images.Bottle_1} />
+        </Animated.View>
+      </TouchableWithoutFeedback>
     </ImageBackground>
   );
 });
