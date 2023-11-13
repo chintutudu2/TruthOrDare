@@ -7,6 +7,7 @@ import {ButtonIcon, ButtonText} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
 import {onPressBack, onPressAge} from '@screens/Main/Age/helpers';
 import {ImageContainer} from '@components/Containers';
+import {RatingType} from '@interfaces/GlobalInterfaces';
 
 const Age = memo(function Age(props) {
   return (
@@ -35,12 +36,12 @@ const Age = memo(function Age(props) {
             style={styles.iconButton}
             isValid
             Icon={<Image source={Constants.Images.KidsIcon} />}
-            onPress={() => onPressAge(Constants.Strings.kids)}
+            onPress={() => onPressAge(RatingType.Kids)}
           />
           <ButtonText
             isValid
             text={Constants.Strings.kids}
-            onPress={() => onPressAge(Constants.Strings.kids)}
+            onPress={() => onPressAge(RatingType.Kids)}
           />
         </RowView>
         <RowView style={styles.buttonContainer}>
@@ -48,12 +49,12 @@ const Age = memo(function Age(props) {
             style={styles.iconButton}
             isValid
             Icon={<Image source={Constants.Images.TeensIcon} />}
-            onPress={() => onPressAge(Constants.Strings.kids)}
+            onPress={() => onPressAge(RatingType.Teens)}
           />
           <ButtonText
             isValid
             text={Constants.Strings.teens}
-            onPress={() => onPressAge(Constants.Strings.kids)}
+            onPress={() => onPressAge(RatingType.Teens)}
           />
         </RowView>
         <RowView style={styles.buttonContainer}>
@@ -61,12 +62,12 @@ const Age = memo(function Age(props) {
             style={styles.iconButton}
             isValid
             Icon={<Image source={Constants.Images.AdultsIcon} />}
-            onPress={() => onPressAge(Constants.Strings.kids)}
+            onPress={() => onPressAge(RatingType.Adults)}
           />
           <ButtonText
             isValid
             text={Constants.Strings.adults}
-            onPress={() => onPressAge(Constants.Strings.kids)}
+            onPress={() => onPressAge(RatingType.Adults)}
           />
         </RowView>
       </View>
