@@ -1,5 +1,5 @@
 import Components from '@components/index';
-import React, {memo, useState} from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import {styles} from '@screens/Main/Game/styles';
 import {Image, View} from 'react-native';
 import Constants from '@constants/index';
@@ -9,19 +9,22 @@ import {ModalType} from '@interfaces/ModalInterfaces';
 import {ImageContainer} from '@components/Containers';
 import {Spinner} from '@components/Spinners';
 import {
+  getPlayersFromAsync,
   onPressBottle,
   onPressPrimaryButton,
   onPressScore,
   onPressSound,
 } from '@screens/Main/Game/helper';
 
-//FIXME: Will be removed when store is added
-const players: string[] = ['Jackson', 'Scarlett', 'Liam'];
-
 const Game = memo(function Game(props) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isSoundOn, setIsSoundOn] = useState(true);
   const [bottleNumber, setBottleNumber] = useState(1);
+  const [players, setPlayers] = useState<string[]>([]);
+
+  useEffect(() => {
+    getPlayersFromAsync(setPlayers);
+  }, []);
 
   return (
     <Components.Layouts.AppLayout
