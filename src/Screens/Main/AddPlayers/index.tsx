@@ -1,15 +1,28 @@
 import Components from '@components/index';
-import React, {memo} from 'react';
+import React, {memo, useEffect, useState} from 'react';
 import {styles} from '@screens/Main/AddPlayers/style';
 import {Image, View} from 'react-native';
 import Constants from '@constants/index';
 import {ButtonIcon, ButtonText} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
 import {ImageContainer} from '@components/Containers';
-import {onPressBack, onPressPlay} from '@screens/Main/AddPlayers/helpers';
+import {
+  getPlayersFromAsync,
+  onPressBack,
+  onPressPlay,
+  addPlayerToAsync,
+  deletePlayerFromAsync,
+} from '@screens/Main/AddPlayers/helpers';
 import {InputText} from '@components/Inputs';
 
 const AddPlayers = memo(function AddPlayers(props) {
+  const [players, setPlayers] = useState<string[] | null>(null);
+  const [value, setValue] = useState<string>('');
+
+  useEffect(() => {
+    getPlayersFromAsync(setPlayers);
+  }, []);
+
   return (
     <Components.Layouts.AppLayout
       background={Constants.Images.AppBackground_3}
@@ -19,53 +32,35 @@ const AddPlayers = memo(function AddPlayers(props) {
         <ImageContainer width={183} height={52} style={styles.logoContainer}>
           <Image source={Constants.Images.AddPlayersText} style={styles.logo} />
         </ImageContainer>
-        <RowView style={styles.nameRow}>
-          <InputText />
-          <ButtonIcon
-            style={styles.iconButton}
-            isValid
-            Icon={<Image source={Constants.Images.PlusIcon} />}
-          />
-        </RowView>
-        <RowView style={styles.nameRow}>
-          <ButtonText
-            background={Constants.Images.ButtonTextBgBlue}
-            style={styles.buttonTextContainer}
-            text={'Lissa'}
-          />
-          <ButtonIcon
-            background={Constants.Images.ButtonIconBgRed}
-            style={styles.iconButton}
-            isValid
-            Icon={<Image source={Constants.Images.DeleteIcon} />}
-          />
-        </RowView>
-        <RowView style={styles.nameRow}>
-          <ButtonText
-            background={Constants.Images.ButtonTextBgBlue}
-            style={styles.buttonTextContainer}
-            text={'Sharlo'}
-          />
-          <ButtonIcon
-            background={Constants.Images.ButtonIconBgRed}
-            style={styles.iconButton}
-            isValid
-            Icon={<Image source={Constants.Images.DeleteIcon} />}
-          />
-        </RowView>
-        <RowView style={styles.nameRow}>
-          <ButtonText
-            background={Constants.Images.ButtonTextBgBlue}
-            style={styles.buttonTextContainer}
-            text={'jack'}
-          />
-          <ButtonIcon
-            background={Constants.Images.ButtonIconBgRed}
-            style={styles.iconButton}
-            isValid
-            Icon={<Image source={Constants.Images.DeleteIcon} />}
-          />
-        </RowView>
+        {players && players.length < 6 && (
+          <RowView style={styles.nameRow}>
+            <InputText value={value} onChangeText={setValue} />
+            <ButtonIcon
+              style={styles.iconButton}
+              isValid={value.trim().length > 0}
+              Icon={<Image source={Constants.Images.PlusIcon} />}
+              onPress={() => addPlayerToAsync(value, setPlayers, setValue)}
+            />
+          </RowView>
+        )}
+        {players?.map((player, index) => {
+          return (
+            <RowView style={styles.nameRow} key={index}>
+              <ButtonText
+                background={Constants.Images.ButtonTextBgBlue}
+                style={styles.buttonTextContainer}
+                text={player}
+              />
+              <ButtonIcon
+                background={Constants.Images.ButtonIconBgRed}
+                style={styles.iconButton}
+                isValid
+                Icon={<Image source={Constants.Images.DeleteIcon} />}
+                onPress={() => deletePlayerFromAsync(player, setPlayers)}
+              />
+            </RowView>
+          );
+        })}
       </View>
       <RowView style={styles.footerContainer}>
         <ButtonIcon
@@ -74,7 +69,7 @@ const AddPlayers = memo(function AddPlayers(props) {
           onPress={onPressBack}
         />
         <ButtonIcon
-          isValid
+          isValid={players ? players.length > 1 : false}
           Icon={<Image source={Constants.Images.PlayIcon} />}
           onPress={onPressPlay}
         />

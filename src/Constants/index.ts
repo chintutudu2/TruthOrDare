@@ -3,6 +3,7 @@ import * as Colors from './Colors';
 import * as Fonts from './Fonts';
 import * as Strings from './Strings';
 import * as NavRoutes from './NavRoutes';
+import * as AsyncKeys from './AsyncKeys';
 
 export default {
   Images: Images.Images,
@@ -11,4 +12,5 @@ export default {
   Fonts: Fonts.Fonts,
   Strings: Strings.Strings,
   NavRoutes: NavRoutes.NavRoutes,
+  AsyncKeys: AsyncKeys.AsyncKeys,
 };
