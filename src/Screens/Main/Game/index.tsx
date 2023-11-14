@@ -9,6 +9,7 @@ import {ModalType, SelectQuestionType} from '@interfaces/ModalInterfaces';
 import {ImageContainer} from '@components/Containers';
 import {Spinner} from '@components/Spinners';
 import {
+  getBottleFromAsync,
   getPlayersFromAsync,
   getRatingFromAsync,
   onPressBottle,
@@ -29,12 +30,13 @@ const Game = memo(function Game(props) {
   const [rating, setRating] = useState<string | null>(RatingType.Kids);
   const [question, setQuestion] = useState<any>(null);
   const [isSoundOn, setIsSoundOn] = useState(true);
-  const [bottleNumber, setBottleNumber] = useState(1);
+  const [bottleNumber, setBottleNumber] = useState<number>(1);
   const [players, setPlayers] = useState<string[]>([]);
 
   useEffect(() => {
     getPlayersFromAsync(setPlayers);
     getRatingFromAsync(setRating);
+    getBottleFromAsync(setBottleNumber);
   }, []);
 
   useEffect(() => {
@@ -88,7 +90,7 @@ const Game = memo(function Game(props) {
         <ButtonIcon
           isValid
           Icon={<Image source={Constants.Images.BottleIcon} />}
-          onPress={() => onPressBottle(bottleNumber, setBottleNumber)}
+          onPress={() => onPressBottle(setBottleNumber)}
         />
       </RowView>
       <Components.Modals.GameModal

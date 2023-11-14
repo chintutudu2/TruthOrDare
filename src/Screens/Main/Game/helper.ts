@@ -31,19 +31,29 @@ function onPressScore(
   });
 }
 
-//TODO: Move bottle number to constant
-function onPressBottle(
-  bottleNumber: number,
-  setBottleNumber: {
-    (value: SetStateAction<number>): void;
-    (arg0: () => number): void;
-  },
+async function onPressBottle(
+  setBottleNumber: React.Dispatch<React.SetStateAction<number>>,
 ) {
   hapticFeedback.triggerImpactHeavy();
-  let updatedBottleNumber = bottleNumber > 12 ? 1 : bottleNumber + 1;
-  setBottleNumber(() => {
-    return updatedBottleNumber;
-  });
+  const updatedBottleNumber = await updateBottleNumberAsync();
+  setBottleNumber(updatedBottleNumber);
+}
+async function updateBottleNumberAsync(): Promise<number> {
+  try {
+    const existingBottle = await AsyncStorage.getItem(
+      Constants.AsyncKeys.bottle,
+    );
+    const parsedBottle = existingBottle ? parseInt(existingBottle) : 1;
+    let updatedBottle = parsedBottle > 12 ? 1 : parsedBottle + 1;
+    await AsyncStorage.setItem(
+      Constants.AsyncKeys.bottle,
+      updatedBottle.toString(),
+    );
+    return updatedBottle;
+  } catch (error) {
+    console.error(error);
+    return 1;
+  }
 }
 
 function onPressPrimaryButton(
@@ -128,6 +138,16 @@ async function getRatingFromAsync(
     console.log(e);
   }
 }
+async function getBottleFromAsync(
+  setBottleNumber: React.Dispatch<React.SetStateAction<number>>,
+) {
+  try {
+    const bottle = await AsyncStorage.getItem(Constants.AsyncKeys.bottle);
+    setBottleNumber(bottle ? parseInt(bottle) : 1);
+  } catch (e) {
+    console.log(e);
+  }
+}
 
 function openSelectModal(
   setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>,
@@ -145,5 +165,6 @@ export {
   onPressBottle,
   getPlayersFromAsync,
   getRatingFromAsync,
+  getBottleFromAsync,
   openSelectModal,
 };
