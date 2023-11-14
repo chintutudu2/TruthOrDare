@@ -85,7 +85,7 @@ const Game = memo(function Game(props) {
         <ButtonIcon
           isValid
           Icon={<Image source={Constants.Images.RankIcon} />}
-          onPress={() => onPressScore(isModalVisible, setIsModalVisible)}
+          onPress={() => onPressScore(setIsModalVisible, setModalType)}
         />
         <ButtonIcon
           isValid
@@ -97,6 +97,7 @@ const Game = memo(function Game(props) {
         isModalVisible={isModalVisible}
         modalType={modalType}
         question={question?.question}
+        players={players}
         onPressPrimaryButton={() =>
           onPressPrimaryButton(
             modalType,

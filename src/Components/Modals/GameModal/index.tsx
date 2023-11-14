@@ -14,6 +14,7 @@ const GameModal = memo(function GameModal(props: GameModalProps) {
     isModalVisible,
     modalType,
     question,
+    players,
     onPressPrimaryButton,
     onPressSecondaryButton,
   } = props;
@@ -93,46 +94,18 @@ const GameModal = memo(function GameModal(props: GameModalProps) {
               <Text style={styles.modalHeadingText}>Score Card</Text>
             </ImageBackground>
             <View style={styles.nameContainer}>
-              <RowView>
-                <Text style={[styles.modalHeadingText, styles.playerName]}>
-                  Jack
-                </Text>
-                <Text style={[styles.modalHeadingText, styles.playerScore]}>
-                  03
-                </Text>
-              </RowView>
-              <RowView>
-                <Text style={[styles.modalHeadingText, styles.playerName]}>
-                  Lissa
-                </Text>
-                <Text style={[styles.modalHeadingText, styles.playerScore]}>
-                  02
-                </Text>
-              </RowView>
-              <RowView>
-                <Text style={[styles.modalHeadingText, styles.playerName]}>
-                  Sharlo
-                </Text>
-                <Text style={[styles.modalHeadingText, styles.playerScore]}>
-                  09
-                </Text>
-              </RowView>
-              <RowView>
-                <Text style={[styles.modalHeadingText, styles.playerName]}>
-                  Ryan
-                </Text>
-                <Text style={[styles.modalHeadingText, styles.playerScore]}>
-                  03
-                </Text>
-              </RowView>
-              <RowView>
-                <Text style={[styles.modalHeadingText, styles.playerName]}>
-                  Alexender
-                </Text>
-                <Text style={[styles.modalHeadingText, styles.playerScore]}>
-                  03
-                </Text>
-              </RowView>
+              {players?.map((player, index) => {
+                return (
+                  <RowView key={index}>
+                    <Text style={[styles.modalHeadingText, styles.playerName]}>
+                      {player}
+                    </Text>
+                    <Text style={[styles.modalHeadingText, styles.playerScore]}>
+                      03
+                    </Text>
+                  </RowView>
+                );
+              })}
             </View>
             <View style={styles.backContainer}>
               <ButtonIcon

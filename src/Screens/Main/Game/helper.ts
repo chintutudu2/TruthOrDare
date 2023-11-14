@@ -19,15 +19,13 @@ function onPressSound(
 }
 
 function onPressScore(
-  isModalVisible: boolean,
-  setIsModalVisible: {
-    (value: SetStateAction<boolean>): void;
-    (arg0: () => boolean): void;
-  },
+  setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>,
+  setModalType: React.Dispatch<React.SetStateAction<ModalType>>,
 ) {
   hapticFeedback.triggerImpactHeavy();
-  setIsModalVisible(() => {
-    return !isModalVisible;
+  setModalType(ModalType.Score);
+  setIsModalVisible(prevState => {
+    return !prevState;
   });
 }
 

@@ -5,6 +5,7 @@ export interface GameModalProps {
   isModalVisible?: boolean;
   modalType?: ModalType;
   question?: string;
+  players?: string[];
   onPressPrimaryButton?: TouchableOpacityProps['onPress'];
   onPressSecondaryButton?: TouchableOpacityProps['onPress'];
 }
