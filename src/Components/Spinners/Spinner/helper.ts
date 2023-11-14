@@ -1,8 +1,16 @@
-import {withRepeat, withSequence, withSpring} from 'react-native-reanimated';
+import {
+  runOnJS,
+  withRepeat,
+  withSequence,
+  withSpring,
+} from 'react-native-reanimated';
 import hapticFeedback from '@utils/HapticUtils';
 import Constants from '@constants/index';
 
-function onPressSpin(animation: {value: number}) {
+function onPressSpin(
+  animation: {value: number},
+  openSelectModal: React.Dispatch<React.SetStateAction<boolean>>,
+) {
   hapticFeedback.triggerImpactHeavy();
   const randomStopAngle = Math.random() * 360;
   animation.value = withRepeat(
@@ -11,6 +19,9 @@ function onPressSpin(animation: {value: number}) {
     ),
     1,
     false,
+    () => {
+      runOnJS(openSelectModal)(true);
+    },
   );
 }
 

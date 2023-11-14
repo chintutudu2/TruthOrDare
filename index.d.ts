@@ -2,6 +2,7 @@ declare module '*.jpg';
 declare module '*.json';
 declare module '*.png';
 
+declare module '@api/*';
 declare module '@app/*';
 declare module '@assets/*';
 declare module '@config/*';

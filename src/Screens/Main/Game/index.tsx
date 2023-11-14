@@ -5,26 +5,43 @@ import {Image, View} from 'react-native';
 import Constants from '@constants/index';
 import {ButtonIcon} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
-import {ModalType} from '@interfaces/ModalInterfaces';
+import {ModalType, SelectQuestionType} from '@interfaces/ModalInterfaces';
 import {ImageContainer} from '@components/Containers';
 import {Spinner} from '@components/Spinners';
 import {
   getPlayersFromAsync,
+  getRatingFromAsync,
   onPressBottle,
   onPressPrimaryButton,
   onPressScore,
+  onPressSecondaryButton,
   onPressSound,
+  openSelectModal,
 } from '@screens/Main/Game/helper';
+import {questionApi} from '@api/index';
+import {RatingType} from '@interfaces/GlobalInterfaces';
 
 const Game = memo(function Game(props) {
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [modalType, setModalType] = useState<ModalType>(ModalType.Select);
+  const [selectQuestionType, setSelectQuestionType] =
+    useState<SelectQuestionType>(SelectQuestionType.Truth);
+  const [rating, setRating] = useState<string | null>(RatingType.Kids);
+  const [question, setQuestion] = useState<any>(null);
   const [isSoundOn, setIsSoundOn] = useState(true);
   const [bottleNumber, setBottleNumber] = useState(1);
   const [players, setPlayers] = useState<string[]>([]);
 
   useEffect(() => {
     getPlayersFromAsync(setPlayers);
+    getRatingFromAsync(setRating);
   }, []);
+
+  useEffect(() => {
+    if (!isModalVisible && modalType == ModalType.Question) {
+      questionApi(selectQuestionType, rating, setQuestion, setIsModalVisible);
+    }
+  }, [modalType, isModalVisible]);
 
   return (
     <Components.Layouts.AppLayout
@@ -43,6 +60,9 @@ const Game = memo(function Game(props) {
             playersCount={players.length}
             playersName={players}
             bottleNumber={bottleNumber}
+            openSelectModal={() =>
+              openSelectModal(setIsModalVisible, setModalType)
+            }
           />
         </View>
       </View>
@@ -73,15 +93,22 @@ const Game = memo(function Game(props) {
       </RowView>
       <Components.Modals.GameModal
         isModalVisible={isModalVisible}
-        modalType={ModalType.Score}
-        question="If you Could have brought any
-        special  gift for a birthday party
-        what would it be?"
+        modalType={modalType}
+        question={question?.question}
         onPressPrimaryButton={() =>
           onPressPrimaryButton(
-            ModalType.Score,
-            isModalVisible,
+            modalType,
             setIsModalVisible,
+            setSelectQuestionType,
+            setModalType,
+          )
+        }
+        onPressSecondaryButton={() =>
+          onPressSecondaryButton(
+            modalType,
+            setIsModalVisible,
+            setSelectQuestionType,
+            setModalType,
           )
         }
       />

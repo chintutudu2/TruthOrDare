@@ -20,7 +20,13 @@ import {
 } from '@components/Spinners/Spinner/helper';
 
 const Spinner = memo(function Spinner(props: SpinnerProps) {
-  const {style, playersCount = 0, playersName = [], bottleNumber = 1} = props;
+  const {
+    style,
+    playersCount = 0,
+    playersName = [],
+    bottleNumber = 1,
+    openSelectModal,
+  } = props;
 
   const radius = dimension.spinnerInnerCircleWidth / 2;
   const cx = dimension.spinnerInnerCircleWidth / 2;
@@ -91,7 +97,8 @@ const Spinner = memo(function Spinner(props: SpinnerProps) {
         {paths}
         <G>{textLabels}</G>
       </Svg>
-      <TouchableWithoutFeedback onPress={() => onPressSpin(animation)}>
+      <TouchableWithoutFeedback
+        onPress={() => onPressSpin(animation, openSelectModal)}>
         <Animated.View style={[styles.bottle, animationStyle]}>
           <Image source={getBottleImageFromNumber(bottleNumber)} />
         </Animated.View>

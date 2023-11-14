@@ -5,4 +5,5 @@ export interface SpinnerProps {
   playersCount?: number;
   playersName?: string[];
   bottleNumber?: number;
+  openSelectModal: React.Dispatch<React.SetStateAction<boolean>>;
 }

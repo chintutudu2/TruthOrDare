@@ -17,6 +17,7 @@ module.exports = {
         ],
         root: ['.'],
         alias: {
+          '@api': './src/Api',
           '@app': './src/App',
           '@assets': './src/Assets',
           '@config': './src/Config',

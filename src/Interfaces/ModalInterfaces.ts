@@ -3,3 +3,8 @@ export enum ModalType {
   Question = 'Question',
   Score = 'Score',
 }
+
+export enum SelectQuestionType {
+  Truth = 'truth',
+  Dare = 'dare',
+}
