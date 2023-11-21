@@ -61,7 +61,7 @@ const GameModal = memo(function GameModal(props: GameModalProps) {
               source={Constants.Images.ModalHeadingBackground}
               resizeMode="cover"
               style={styles.modalHeading}>
-              <Text style={styles.modalHeadingText}>Jack's Turn</Text>
+              <Text style={styles.modalHeadingText}>Question</Text>
             </ImageBackground>
             {question && <Text style={styles.question}>{question}</Text>}
             <RowView style={styles.questionButtonContainer}>
