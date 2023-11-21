@@ -12,5 +12,6 @@ export const Strings = {
   add_truth: 'Add Truth',
   add_dare: 'Add Dare',
   sound_on: 'Sound On',
+  sound_off: 'Sound Off',
   share: 'Share',
 };

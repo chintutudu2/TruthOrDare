@@ -12,9 +12,10 @@ import {
   getBottleFromAsync,
   getPlayersFromAsync,
   getRatingFromAsync,
+  getSoundSettingFromAsync,
+  onPressBack,
   onPressBottle,
   onPressPrimaryButton,
-  onPressScore,
   onPressSecondaryButton,
   onPressSound,
   openSelectModal,
@@ -37,6 +38,7 @@ const Game = memo(function Game(props) {
     getPlayersFromAsync(setPlayers);
     getRatingFromAsync(setRating);
     getBottleFromAsync(setBottleNumber);
+    getSoundSettingFromAsync(setIsSoundOn);
   }, []);
 
   useEffect(() => {
@@ -71,6 +73,11 @@ const Game = memo(function Game(props) {
       <RowView style={styles.footerContainer}>
         <ButtonIcon
           isValid
+          Icon={<Image source={Constants.Images.BackIcon} />}
+          onPress={() => onPressBack()}
+        />
+        <ButtonIcon
+          isValid
           Icon={
             <Image
               source={
@@ -80,13 +87,14 @@ const Game = memo(function Game(props) {
               }
             />
           }
-          onPress={() => onPressSound(isSoundOn, setIsSoundOn)}
+          onPress={() => onPressSound(setIsSoundOn)}
         />
-        <ButtonIcon
+        {/* TODO: add this if score needs to be implemented */}
+        {/* <ButtonIcon
           isValid
           Icon={<Image source={Constants.Images.RankIcon} />}
           onPress={() => onPressScore(setIsModalVisible, setModalType)}
-        />
+        /> */}
         <ButtonIcon
           isValid
           Icon={<Image source={Constants.Images.BottleIcon} />}

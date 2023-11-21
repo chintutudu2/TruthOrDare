@@ -1,21 +1,30 @@
 import Constants from '@constants/index';
-import {RatingType} from '@interfaces/GlobalInterfaces';
+import {pop} from '@helpers/NavigatorHelper';
 import {ModalType, SelectQuestionType} from '@interfaces/ModalInterfaces';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import hapticFeedback from '@utils/HapticUtils';
-import {SetStateAction} from 'react';
 
-function onPressSound(
-  isSoundOn: boolean,
-  setIsSoundOn: {
-    (value: SetStateAction<boolean>): void;
-    (arg0: () => boolean): void;
-  },
+async function onPressSound(
+  setIsSoundOn: React.Dispatch<React.SetStateAction<boolean>>,
 ) {
   hapticFeedback.triggerImpactHeavy();
-  setIsSoundOn(() => {
-    return !isSoundOn;
-  });
+  const updatedSound = await updateSoundAsync();
+  setIsSoundOn(updatedSound);
+}
+async function updateSoundAsync(): Promise<boolean> {
+  try {
+    const existingSound = await AsyncStorage.getItem(Constants.AsyncKeys.sound);
+    if (existingSound == 'false') {
+      await AsyncStorage.setItem(Constants.AsyncKeys.sound, 'true');
+      return true;
+    } else {
+      await AsyncStorage.setItem(Constants.AsyncKeys.sound, 'false');
+      return false;
+    }
+  } catch (error) {
+    console.error(error);
+    return true;
+  }
 }
 
 function onPressScore(
@@ -146,6 +155,21 @@ async function getBottleFromAsync(
     console.log(e);
   }
 }
+async function getSoundSettingFromAsync(
+  setIsSoundOn: React.Dispatch<React.SetStateAction<boolean>>,
+) {
+  try {
+    const soundFlag = await AsyncStorage.getItem(Constants.AsyncKeys.sound);
+    if (soundFlag == undefined || soundFlag == null) {
+      await AsyncStorage.setItem(Constants.AsyncKeys.sound, 'true');
+      setIsSoundOn(true);
+    } else {
+      setIsSoundOn(soundFlag == 'true' ? true : false);
+    }
+  } catch (e) {
+    console.log(e);
+  }
+}
 
 function openSelectModal(
   setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>,
@@ -153,6 +177,11 @@ function openSelectModal(
 ) {
   setIsModalVisible(true);
   setModalType(ModalType.Select);
+}
+
+function onPressBack() {
+  hapticFeedback.triggerImpactHeavy();
+  pop();
 }
 
 export {
@@ -165,4 +194,6 @@ export {
   getRatingFromAsync,
   getBottleFromAsync,
   openSelectModal,
+  onPressBack,
+  getSoundSettingFromAsync,
 };
