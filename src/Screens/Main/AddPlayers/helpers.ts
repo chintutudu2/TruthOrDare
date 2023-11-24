@@ -15,11 +15,11 @@ function onPressPlay() {
 
 // Update state in initial render
 async function getPlayersFromAsync(
-  setPlayers: React.Dispatch<React.SetStateAction<string[] | null>>,
+  setPlayers: React.Dispatch<React.SetStateAction<string[]>>,
 ) {
   try {
     const jsonValue = await AsyncStorage.getItem(Constants.AsyncKeys.players);
-    const parsedValue = jsonValue ? JSON.parse(jsonValue) : null;
+    const parsedValue = jsonValue ? JSON.parse(jsonValue) : [];
     setPlayers(parsedValue);
   } catch (e) {
     console.log(e);

@@ -16,7 +16,7 @@ import {
 import {InputText} from '@components/Inputs';
 
 const AddPlayers = memo(function AddPlayers(props) {
-  const [players, setPlayers] = useState<string[] | null>(null);
+  const [players, setPlayers] = useState<string[]>([]);
   const [value, setValue] = useState<string>('');
 
   useEffect(() => {

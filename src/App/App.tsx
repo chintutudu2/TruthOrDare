@@ -21,7 +21,7 @@ const App = () => {
   };
   return (
     <SafeAreaProvider>
-      <StatusBar hidden />
+      <StatusBar translucent backgroundColor="transparent" />
       <NavigationContainer
         ref={navigationRef}
         onReady={() => {

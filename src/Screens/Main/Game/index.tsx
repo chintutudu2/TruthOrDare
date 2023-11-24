@@ -65,7 +65,9 @@ const Game = memo(function Game(props) {
             playersName={players}
             bottleNumber={bottleNumber}
             openSelectModal={() =>
-              openSelectModal(setIsModalVisible, setModalType)
+              setTimeout(() => {
+                openSelectModal(setIsModalVisible, setModalType);
+              }, 1000)
             }
           />
         </View>
