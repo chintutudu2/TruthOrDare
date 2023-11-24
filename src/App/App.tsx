@@ -5,7 +5,7 @@ import {
 } from '@helpers/NavigatorHelper';
 import Navigators from '@navigators/index';
 import {NavigationContainer, NavigationState} from '@react-navigation/native';
-import React from 'react-native';
+import React, {StatusBar} from 'react-native';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {useState} from 'react';
 import {Nullable} from '@interfaces/GlobalInterfaces';
@@ -21,6 +21,7 @@ const App = () => {
   };
   return (
     <SafeAreaProvider>
+      <StatusBar hidden />
       <NavigationContainer
         ref={navigationRef}
         onReady={() => {
