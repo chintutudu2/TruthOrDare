@@ -48,7 +48,8 @@ const Settings = memo(function Settings(props) {
           />
           <ButtonText isValid text={Constants.Strings.add_dare} />
         </RowView> */}
-        <RowView style={styles.buttonContainer}>
+        {/* TODO: Sound UI */}
+        {/* <RowView style={styles.buttonContainer}>
           <ButtonIcon
             style={styles.iconButton}
             isValid
@@ -72,7 +73,7 @@ const Settings = memo(function Settings(props) {
             }
             onPress={() => onPressSound(setIsSoundOn)}
           />
-        </RowView>
+        </RowView> */}
         <RowView style={styles.buttonContainer}>
           <ButtonIcon
             style={styles.iconButton}

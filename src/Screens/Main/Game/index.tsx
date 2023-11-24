@@ -78,7 +78,8 @@ const Game = memo(function Game(props) {
           Icon={<Image source={Constants.Images.BackIcon} />}
           onPress={() => onPressBack()}
         />
-        <ButtonIcon
+        {/* TODO: Sound */}
+        {/* <ButtonIcon
           isValid
           Icon={
             <Image
@@ -90,7 +91,7 @@ const Game = memo(function Game(props) {
             />
           }
           onPress={() => onPressSound(setIsSoundOn)}
-        />
+        /> */}
         {/* TODO: add this if score needs to be implemented */}
         {/* <ButtonIcon
           isValid
