@@ -1,6 +1,13 @@
+import {questionApi} from '@api/index';
 import Constants from '@constants/index';
+import {
+  getDBConnection,
+  isQuestionPresent,
+  saveQuestion,
+} from '@database/index';
 import {pop} from '@helpers/NavigatorHelper';
 import {ModalType, SelectQuestionType} from '@interfaces/ModalInterfaces';
+import {GameQuestion} from '@models/index';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import hapticFeedback from '@utils/HapticUtils';
 
@@ -184,6 +191,41 @@ function onPressBack() {
   pop();
 }
 
+async function getQuestionFromApi(
+  selectQuestionType: SelectQuestionType,
+  rating: string | null,
+  setQuestion: React.Dispatch<React.SetStateAction<any>>,
+  setIsModalVisible: React.Dispatch<React.SetStateAction<boolean>>,
+) {
+  let apiRes;
+  let db = await getDBConnection();
+  let existingQuestionId;
+  let data!: GameQuestion;
+
+  do {
+    apiRes = await questionApi(selectQuestionType, rating);
+
+    if (apiRes?.id) {
+      existingQuestionId = apiRes.id;
+
+      if (!(await isQuestionPresent(db, existingQuestionId))) {
+        data = {
+          id: apiRes.id,
+          type: apiRes.type,
+          rating: apiRes.rating,
+          question: apiRes.question,
+        };
+        setQuestion(data);
+        setIsModalVisible(true);
+      }
+    }
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+  } while (await isQuestionPresent(db, existingQuestionId));
+
+  saveQuestion(db, data);
+}
+
 export {
   onPressScore,
   onPressSound,
@@ -196,4 +238,5 @@ export {
   openSelectModal,
   onPressBack,
   getSoundSettingFromAsync,
+  getQuestionFromApi,
 };

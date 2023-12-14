@@ -11,6 +11,7 @@ import {Spinner} from '@components/Spinners';
 import {
   getBottleFromAsync,
   getPlayersFromAsync,
+  getQuestionFromApi,
   getRatingFromAsync,
   getSoundSettingFromAsync,
   onPressBack,
@@ -20,7 +21,6 @@ import {
   onPressSound,
   openSelectModal,
 } from '@screens/Main/Game/helper';
-import {questionApi} from '@api/index';
 import {RatingType} from '@interfaces/GlobalInterfaces';
 
 const Game = memo(function Game(props) {
@@ -43,7 +43,12 @@ const Game = memo(function Game(props) {
 
   useEffect(() => {
     if (!isModalVisible && modalType == ModalType.Question) {
-      questionApi(selectQuestionType, rating, setQuestion, setIsModalVisible);
+      getQuestionFromApi(
+        selectQuestionType,
+        rating,
+        setQuestion,
+        setIsModalVisible,
+      );
     }
   }, [modalType, isModalVisible]);
 

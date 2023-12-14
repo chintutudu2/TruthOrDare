@@ -13,3 +13,5 @@ declare module '@screens/*';
 declare module '@interfaces/*';
 declare module '@navigators/*';
 declare module '@helpers/*';
+declare module '@models/*';
+declare module '@database/*';

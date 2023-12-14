@@ -1,14 +1,22 @@
 import Components from '@components/index';
-import React, {memo} from 'react';
+import React, {memo, useEffect} from 'react';
 import {styles} from '@screens/Main/LetsPlay/styles';
 import {Image} from 'react-native';
 import Constants from '@constants/index';
 import {ButtonIcon, ButtonText} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
-import {onPressLetsPlay, onPressSettings} from '@screens/Main/LetsPlay/helper';
+import {
+  initDatabase,
+  onPressLetsPlay,
+  onPressSettings,
+} from '@screens/Main/LetsPlay/helper';
 import {ImageContainer} from '@components/Containers';
 
 const LetsPlay = memo(function LetsPlay(props) {
+  useEffect(() => {
+    initDatabase();
+  }, []);
+
   return (
     <Components.Layouts.AppLayout
       hasScrollView={false}

@@ -1,6 +1,7 @@
 import hapticFeedback from '@utils/HapticUtils';
 import {push} from '@helpers/NavigatorHelper';
 import Constants from '@constants/index';
+import {createTable, getDBConnection} from '@database/index';
 
 function onPressLetsPlay() {
   hapticFeedback.triggerImpactHeavy();
@@ -12,4 +13,13 @@ function onPressSettings() {
   push(Constants.NavRoutes.Settings);
 }
 
-export {onPressLetsPlay, onPressSettings};
+async function initDatabase() {
+  try {
+    const db = await getDBConnection();
+    await createTable(db);
+  } catch (error) {
+    console.error('Lets Play: initDatabase: ', error);
+  }
+}
+
+export {onPressLetsPlay, onPressSettings, initDatabase};

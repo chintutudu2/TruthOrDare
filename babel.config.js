@@ -28,6 +28,8 @@ module.exports = {
           '@interfaces': './src/Interfaces',
           '@navigators': './src/Navigators',
           '@helpers': './src/Helpers',
+          '@models': './src/Models',
+          '@database': './src/Database',
         },
       },
     ],
