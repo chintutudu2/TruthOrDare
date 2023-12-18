@@ -48,7 +48,7 @@ async function addPlayerToAsyncStorage(value: string): Promise<string[]> {
     const parsedPlayers = existingPlayers ? JSON.parse(existingPlayers) : [];
     let isPlayerPresent = false;
     parsedPlayers.forEach((element: string) => {
-      if (element == value) {
+      if (element.toLowerCase() == value.toLowerCase()) {
         isPlayerPresent = true;
       }
     });
