@@ -1,7 +1,7 @@
 import Components from '@components/index';
 import React, {memo, useEffect, useState} from 'react';
 import {styles} from '@screens/Main/AddPlayers/style';
-import {Image, View} from 'react-native';
+import {Image, Keyboard, View} from 'react-native';
 import Constants from '@constants/index';
 import {ButtonIcon, ButtonText} from '@components/Buttons';
 import {RowView} from '@components/Flexs';
@@ -18,9 +18,28 @@ import {InputText} from '@components/Inputs';
 const AddPlayers = memo(function AddPlayers(props) {
   const [players, setPlayers] = useState<string[]>([]);
   const [value, setValue] = useState<string>('');
+  const [isKeyboardVisible, setKeyboardVisible] = useState<boolean>(false);
 
   useEffect(() => {
     getPlayersFromAsync(setPlayers);
+
+    const keyboardDidShowListener = Keyboard.addListener(
+      'keyboardDidShow',
+      () => {
+        setKeyboardVisible(true);
+      },
+    );
+    const keyboardDidHideListener = Keyboard.addListener(
+      'keyboardDidHide',
+      () => {
+        setKeyboardVisible(false);
+      },
+    );
+
+    return () => {
+      keyboardDidHideListener.remove();
+      keyboardDidShowListener.remove();
+    };
   }, []);
 
   return (
@@ -62,18 +81,21 @@ const AddPlayers = memo(function AddPlayers(props) {
           );
         })}
       </View>
-      <RowView style={styles.footerContainer}>
-        <ButtonIcon
-          isValid
-          Icon={<Image source={Constants.Images.BackIcon} />}
-          onPress={onPressBack}
-        />
-        <ButtonIcon
-          isValid={players ? players.length > 1 : false}
-          Icon={<Image source={Constants.Images.PlayIcon} />}
-          onPress={onPressPlay}
-        />
-      </RowView>
+      {/* TODO: change logic for implementing this */}
+      {!isKeyboardVisible ? (
+        <RowView style={styles.footerContainer}>
+          <ButtonIcon
+            isValid
+            Icon={<Image source={Constants.Images.BackIcon} />}
+            onPress={onPressBack}
+          />
+          <ButtonIcon
+            isValid={players ? players.length > 1 : false}
+            Icon={<Image source={Constants.Images.PlayIcon} />}
+            onPress={onPressPlay}
+          />
+        </RowView>
+      ) : null}
     </Components.Layouts.AppLayout>
   );
 });

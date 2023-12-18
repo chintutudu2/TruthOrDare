@@ -29,7 +29,7 @@ async function getPlayersFromAsync(
 // Add new player to async storage on clicking plus icon
 async function addPlayerToAsync(
   value: string,
-  setPlayers: React.Dispatch<React.SetStateAction<string[] | null>>,
+  setPlayers: React.Dispatch<React.SetStateAction<string[]>>,
   setValue: React.Dispatch<React.SetStateAction<string>>,
 ) {
   try {
@@ -68,7 +68,7 @@ async function addPlayerToAsyncStorage(value: string): Promise<string[]> {
 // Delete player from async storage on clicking trash icon
 async function deletePlayerFromAsync(
   value: string,
-  setPlayers: React.Dispatch<React.SetStateAction<string[] | null>>,
+  setPlayers: React.Dispatch<React.SetStateAction<string[]>>,
 ) {
   try {
     const updatedPlayers = await deletePlayerFromAsyncStorage(value);
