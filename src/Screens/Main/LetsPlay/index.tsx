@@ -56,13 +56,14 @@ const LetsPlay = memo(function LetsPlay(props) {
           onPress={onPressSettings}
         />
       </RowView>
-      <RowView style={styles.buttonContainer}>
+      {/* Remove rate us */}
+      {/* <RowView style={styles.buttonContainer}>
         <ButtonIcon
           style={styles.iconButton}
           Icon={<Image source={Constants.Images.StarIcon} />}
         />
         <ButtonText text={Constants.Strings.rate_us} />
-      </RowView>
+      </RowView> */}
     </Components.Layouts.AppLayout>
   );
 });
